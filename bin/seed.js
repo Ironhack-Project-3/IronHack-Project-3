@@ -67,3 +67,13 @@ User
   .catch(error => {
     throw new Error(`User is not added. ${error}`)
   })
+
+  Thread
+  .create(Threads)
+  .then(allThreads => {
+    console.log(`Thread is added`)
+    mongoose.connection.close()
+  })
+  .catch(error => {
+    throw new Error(`Thread is not added. ${error}`)
+  })

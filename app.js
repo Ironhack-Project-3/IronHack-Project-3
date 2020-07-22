@@ -48,13 +48,13 @@ const MongoStoreThread = require('connect-mongo')(sessionThread);
 const sessionUser = require('express-session');
 const MongoStoreUser = require('connect-mongo')(sessionUser);
 
-// Import of the model Databse from './models/...'
+// Import of the model Database from './models/...'
 const Thread = require('./models/Thread');
 const User = require('./models/User');
 
 
 app.use(
-  sessionDatabse({
+  sessionThread({
     secret: process.env.SESSION_SECRET,
     cookie: {
       maxAge: 24 * 60 * 60 * 1000
@@ -64,7 +64,7 @@ app.use(
     //Forces the session to be saved back to the session store, 
     // even if the session was never modified during the request.
     resave: true,
-    store: new MongoStoreDatabase({
+    store: new MongoStoreThread({
       //When the session cookie has an expiration date, connect-mongo will use it.
       // Otherwise, it will create a new one, using ttl option - here ttl is one day.
       mongooseConnection: mongoose.connection,
@@ -107,13 +107,16 @@ app.set("view engine", "hbs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 
-
+/*
 // default value for title local
 app.locals.title = "";
 const index = require("./routes/index");
 app.use("/", index);
 const authRoutes = require("./routes/auth");
 app.use("/", authRoutes);
-const newKebab = require("./routes/threadRoute");
-app.use("/", newKebab);
+const newThread = require("./routes/threadRoute");
+app.use("/", newThread);
+*/
+
 module.exports = app
+
