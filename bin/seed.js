@@ -7,10 +7,9 @@ mongoose.connect(process.env.MONGODB_URI||`mongodb://localhost/Database`, {
   useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true,
-});
-
-//Kebab.collection.drop()
-//User.collection.drop()
+}).catch(error => {
+  throw new Error(`User is not added. ${error}`)
+})
 
 const Users = [
   {
@@ -19,7 +18,7 @@ const Users = [
     name: "Hans",
     email: "hans@hans.com",
     role: "provider",
-    competence: "default",
+    competence: "speaking",
     age: 25,
     address: "Kreuzbergstrasse 48, 10965 Berlin Deutschland",
     picture: "https://i.imgur.com/WvWyXBF.jpg",
@@ -38,7 +37,7 @@ const Users = [
     name: "Greta",
     email: "greta@greta.com",
     role: "user",
-    competence: "default",
+    competence: "speaking",
     age: 24,
     address: "Kreuzbergstrasse 40, 10965 Berlin Deutschland",
     picture: "https://i.imgur.com/WvWyXBF.jpg",
@@ -55,15 +54,25 @@ const Users = [
 
 ];
 
-const Thread = []
+ const Threads = []
 
 
 User
   .create(Users)
   .then(allUsers => {
     console.log(`User is added`)
-    mongoose.connection.close()
+    // mongoose.connection.close()
   })
   .catch(error => {
-    throw new Error(`User is not added. ${error}`)
+    throw new Error(`User is not added. ${error.message}`)
+  })
+
+  Thread
+  .create(Threads)
+  .then(allThreads => {
+    console.log(`Thread is added`)
+    // mongoose.connection.close()
+  })
+  .catch(error => {
+    throw new Error(`Thread is not added. ${error}`)
   })
