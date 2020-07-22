@@ -46,7 +46,12 @@ const userSchema = new Schema({
   },
   picture: String,
   biography: String,
-  review: String
+  reviews: [
+    {
+      user: String,
+      comments: String
+    }
+  ]
 });
 
 const User = mongoose.model('User', userSchema);
