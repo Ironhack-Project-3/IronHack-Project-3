@@ -12,21 +12,58 @@ mongoose.connect(process.env.MONGODB_URI||`mongodb://localhost/Database`, {
 //Kebab.collection.drop()
 //User.collection.drop()
 
-const Users = [{}];
+const Users = [
+  {
+    username: "hans",
+    password: "hanshans",
+    name: "Hans",
+    email: "hans@hans.com",
+    role: "provider",
+    competence: "default",
+    age: 25,
+    address: "Kreuzbergstrasse 48, 10965 Berlin Deutschland",
+    picture: "https://i.imgur.com/WvWyXBF.jpg",
+    biography: "I'm Hans!",
+    reviews: [
+      {
+        user: "Hans",
+        comments: "I'm Hans' review"
+      }
+    ]
+  },
 
-const Kebabs = [
+  {
+    username: "greta",
+    password: "gretagreta",
+    name: "Greta",
+    email: "greta@greta.com",
+    role: "user",
+    competence: "default",
+    age: 24,
+    address: "Kreuzbergstrasse 40, 10965 Berlin Deutschland",
+    picture: "https://i.imgur.com/WvWyXBF.jpg",
+    biography: "I'm Greta!",
+    reviews: [
+      {
+        user: "Greta",
+        comments: "I'm Greta's review"
+      }
+    ]
+  }
 
 
 
-]
+];
+
+const Thread = []
 
 
-Kebab
-  .create(Kebabs)
-  .then(allKebabs => {
-    console.log(`Kebab Shop is added`)
+User
+  .create(Users)
+  .then(allUsers => {
+    console.log(`User is added`)
     mongoose.connection.close()
   })
   .catch(error => {
-    throw new Error(`Kebab shop is not added. ${error}`)
+    throw new Error(`User is not added. ${error}`)
   })

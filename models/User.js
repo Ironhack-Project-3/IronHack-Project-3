@@ -25,19 +25,18 @@ const userSchema = new Schema({
   },
   role: {
     type: String,
+    enum: ['user', 'provider'],
     required: true
   },
   incompetence: {
     type: String,
     enum: ['speaking', 'writing', 'walking'],
-    default: 'speaking',
-    required: true
+    default: 'speaking'
   },
   competence: {
     type: String,
     enum: ['speaking', 'writing', 'walking'],
-    default: 'speaking',
-    required: true
+    default: 'speaking'
   },
   age: Number,
   address: {
