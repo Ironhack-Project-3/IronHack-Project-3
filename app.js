@@ -54,7 +54,7 @@ const User = require('./models/User');
 
 
 app.use(
-  sessionDatabse({
+  sessionDatabase({
     secret: process.env.SESSION_SECRET,
     cookie: {
       maxAge: 24 * 60 * 60 * 1000
