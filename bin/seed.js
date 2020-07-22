@@ -1,9 +1,9 @@
 const mongoose = require("mongoose")
 
-const Kebab = require("../models/kebab")
-const User = require("../models/user")
+const Thread = require("../models/Thread")
+const User = require("../models/User")
 
-mongoose.connect(process.env.MONGODB_URI||`mongodb://localhost/kebabDb`, {
+mongoose.connect(process.env.MONGODB_URI||`mongodb://localhost/Database`, {
   useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true,
