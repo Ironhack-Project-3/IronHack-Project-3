@@ -5,7 +5,7 @@ const router  = express.Router();
 const User = require('../models/User');
 const Thread = require('../models/Thread');
 
-router.post('../client/src/components/Home.js', (req, res, next)=>{
+router.post('/', (req, res, next)=>{
  
   User.create({
     name: req.body.name,
