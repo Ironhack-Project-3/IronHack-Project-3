@@ -7,7 +7,7 @@ const User = require('../models/User');
  
 // GET route => to retrieve a specific task
 router.get('/users/:userId/threads/:thredId', (req, res, next) => {
-  Thread.findById(req.params.taskId)
+  Thread.findById(req.params.threadId)
   .then(theThread =>{
       res.json(theThread);
   })
@@ -18,13 +18,14 @@ router.get('/users/:userId/threads/:thredId', (req, res, next) => {
  
 // POST route => to create a new task
 router.post('/threads', (req, res, next)=>{
-  
+  console.log("work", req.body)
   Thread.create({
       title: req.body.title,
       description: req.body.description,  
       user: req.body.userID
   })
     .then(response => {
+      console.log("is this the response?")
         User.findByIdAndUpdate(req.body.userID, { $push:{ threads: response._id } })
         .then(theResponse => {
             res.json(theResponse);
@@ -39,16 +40,16 @@ router.post('/threads', (req, res, next)=>{
 })
  
 // PUT route => to update a specific task
-router.put('/tasks/:id', (req, res, next)=>{
+router.put('/threads/:id', (req, res, next)=>{
  
   if(!mongoose.Types.ObjectId.isValid(req.params.id)) {
     res.status(400).json({ message: 'Specified id is not valid' });
     return;
   }
  
-  Task.findByIdAndUpdate(req.params.id, req.body)
+  Thread.findByIdAndUpdate(req.params.id, req.body)
     .then(() => {
-      res.json({ message: `Task with ${req.params.id} is updated successfully.` });
+      res.json({ message: `Thread with ${req.params.id} is updated successfully.` });
     })
     .catch(err => {
       res.json(err);
@@ -56,18 +57,28 @@ router.put('/tasks/:id', (req, res, next)=>{
 })
  
 // DELETE route => to delete a specific task
-router.delete('/tasks/:id', (req, res, next)=>{
+router.delete('/threads/:id', (req, res, next)=>{
  
   if(!mongoose.Types.ObjectId.isValid(req.params.id)) {
     res.status(400).json({ message: 'Specified id is not valid' });
     return;
   }
  
-  Task.findByIdAndRemove(req.params.id)
+  Thread.findByIdAndRemove(req.params.id)
     .then(() => {
-      res.json({ message: `Task with ${req.params.id} is removed successfully.` });
+      res.json({ message: `Thread with ${req.params.id} is removed successfully.` });
     })
     .catch(err => {
+      res.json(err);
+    })
+})
+
+router.get('/threads', (req, res, next)=>{
+  Thread.find()
+    .then((threads) => {
+      res.json(threads);
+    })
+    .catch( err => {
       res.json(err);
     })
 })
