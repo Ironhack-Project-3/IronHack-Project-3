@@ -50,11 +50,13 @@ const Users = [
     ]
   }
 
-
-
 ];
 
- const Threads = []
+ const Threads = [ {
+  title: 'hfjhsajleowioi',
+  body: 'wlkjelkqwjelkwjelkjlkjld'
+}
+ ]
 
 
 User
