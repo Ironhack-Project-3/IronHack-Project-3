@@ -44,7 +44,8 @@ const userSchema = new Schema({
       user: String,
       comments: String
     }
-  ]
+  ],
+  thread: {type: Schema.Types.ObjectId, ref: 'Thread'}
 });
 
 const User = mongoose.model('User', userSchema);
