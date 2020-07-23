@@ -28,16 +28,10 @@ const userSchema = new Schema({
     enum: ['user', 'provider'],
     required: true
   },
-  incompetence: {
-    type: String,
-    enum: ['speaking', 'writing', 'walking'],
-    default: 'speaking'
-  },
-  competence: {
-    type: String,
-    enum: ['speaking', 'writing', 'walking'],
-    default: 'speaking'
-  },
+  
+  incompetence: [['speaking'], ['writing'], ['walking']],
+  competence: [['speaking'], ['writing'], ['walking']],
+
   age: Number,
   address: {
     type: String,

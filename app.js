@@ -36,6 +36,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 
+
 app.use(require('node-sass-middleware')({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
@@ -117,6 +118,11 @@ app.use("/", authRoutes);
 const newThread = require("./routes/threadRoute");
 app.use("/", newThread);
 */
+
+app.use('/api', require('./routes/User-routes'));
+const threads=require("./routes/Thread-routes")
+app.use('/api', threads);
+
 
 module.exports = app
 
