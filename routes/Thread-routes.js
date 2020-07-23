@@ -1,40 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const router  = express.Router();
- 
 const Thread = require('../models/Thread');
 const User = require('../models/User');   
  
- 
-// // POST route => to create a new thread
-// router.post('/Threads/new', (req, res, next)=>{
-//  console.log(req.body)
-//   Thread.create({
-//     title: req.body.title,
-//     description: req.body.description,
-//   })
-//     .then(response => {
-//       res.json(response);
-//     })
-//     .catch(err => {
-//       res.json(err);
-//     })
-// });
-
-// // GET route => to get all the threads 
-// router.get('/Threads/new', (req, res, next) => {
-//   Thread.find().populate('tasks')
-//     .then(allTheThreads => {
-//       res.json(allTheThreads);
-//     })
-//     .catch(err => {
-//       res.json(err);
-//     })
-// });
-
-
-
-
  
 // GET route => to retrieve a specific task
 router.get('/users/:userId/threads/:thredId', (req, res, next) => {
@@ -100,6 +69,16 @@ router.delete('/threads/:id', (req, res, next)=>{
       res.json({ message: `Thread with ${req.params.id} is removed successfully.` });
     })
     .catch(err => {
+      res.json(err);
+    })
+})
+
+router.get('/threads', (req, res, next)=>{
+  Thread.find()
+    .then((threads) => {
+      res.json(threads);
+    })
+    .catch( err => {
       res.json(err);
     })
 })

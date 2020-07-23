@@ -11,9 +11,11 @@ class AddUser extends Component {
     event.preventDefault();
     const name = this.state.name;
     const email = this.state.email;
-    axios.post("http://localhost:5555/api/users", { name, email })
-    .then( () => {
-        // this.props.getData();
+    console.log("HERE", name, email)
+    axios.post("/api/users/new", { name, email })
+    .then( (newUser) => {
+
+         this.props.getData();
         this.setState({name: "", email: ""});
     })
     .catch( error => console.log(error) )
@@ -32,7 +34,6 @@ class AddUser extends Component {
           <input type="text" name="name" value={this.state.name} onChange={ e => this.handleChange(e)}/>
           <label>email:</label>
           <textarea name="email" value={this.state.email} onChange={ e => this.handleChange(e)} />
-          
           <input type="submit" value="Submit" />
         </form>
       </div>

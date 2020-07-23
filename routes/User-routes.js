@@ -5,8 +5,8 @@ const router  = express.Router();
 const User = require('../models/User');
 const Thread = require('../models/Thread');
 
-router.post('/', (req, res, next)=>{
- 
+router.post('/users/new', (req, res, next)=>{
+  console.log(req.body.name)
   User.create({
     name: req.body.name,
     email: req.body.email,
@@ -29,9 +29,11 @@ router.post('/', (req, res, next)=>{
     // ]
   })
     .then(response => {
+      console.log(response)
       res.json(response);
     })
     .catch(err => {
+      console.log(err, "ERR")
       res.json(err);
     })
 });
@@ -93,6 +95,16 @@ router.delete('/users/:id', (req, res, next)=>{
     })
 })
  
+router.get('/users', (req, res, next)=>{
+  User.find()
+    .then((users) => {
+      res.json(users);
+    })
+    .catch( err => {
+      res.json(err);
+    })
+})
+
 module.exports = router;
 
 
