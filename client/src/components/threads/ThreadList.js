@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import AddThread from './AddThread'; // <== !!!
+import AddThread from './AddThread';  
 
 class ThreadList extends Component {
   constructor(){
@@ -27,17 +27,21 @@ class ThreadList extends Component {
       <div>
         <div style={{width: '60%', float:"left"}}>
           { this.state.listOfThreads.map( thread => {
-            return (
+            return ( 
+            
               <div key={thread._id}>
+               
                 <Link to={`/threads/${thread._id}`}>
-                  <h3>{thread.title}</h3>
+                  < h3>{thread.title}</h3>
                 </Link>
                 <p style={{maxWidth: '400px'}} >{thread.description} </p>
               </div>
+            
             )})
           }
         </div>
         <div style={{width: '40%', float:"right"}}>
+          <h2>Add New Thread</h2>
             <AddThread getData={() => this.getAllThreads()}/> {/* <== !!! */}
         </div>
       </div>

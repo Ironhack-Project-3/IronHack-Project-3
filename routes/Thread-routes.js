@@ -6,7 +6,7 @@ const User = require('../models/User');
  
  
 // GET route => to retrieve a specific task
-router.get('/users/:userId/threads/:thredId', (req, res, next) => {
+router.get('/users/:userId/threads/:threadId', (req, res, next) => {
   Thread.findById(req.params.threadId)
   .then(theThread =>{
       res.json(theThread);
@@ -73,7 +73,16 @@ router.delete('/threads/:id', (req, res, next)=>{
     })
 })
 
+router.get('/threads/:id', (req, res) => {
+  console.log("HELOOOOOOOo")
+  Thread.findById(req.params.id)
+  .then((threadObject) => {
+    res.json(threadObject)
+  })
+})
+
 router.get('/threads', (req, res, next)=>{
+  console.log("HELLO FROM ALL HREADS")
   Thread.find()
     .then((threads) => {
       res.json(threads);
@@ -82,5 +91,7 @@ router.get('/threads', (req, res, next)=>{
       res.json(err);
     })
 })
+
+
  
 module.exports = router;
