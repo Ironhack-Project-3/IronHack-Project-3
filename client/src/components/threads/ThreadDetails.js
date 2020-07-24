@@ -27,6 +27,7 @@ class ThreadDetails extends Component {
     if (this.state.thread) {
     return <div className="thread-details">
       <div className="thread-details-text">
+        
         <h3>{this.state.thread.title}</h3>
         <p>{this.state.thread.description}</p>
         <div className="thread-details-buttons">

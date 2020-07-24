@@ -6,7 +6,7 @@ import ThreadList from './threads/ThreadList';
 const Home = () => {
   return (
   <div className="homepage"> 
-
+    {/* <Navbar />  */}
     <h1 className="homepage-header">See all these amazing meat threads!</h1>
       
     <div className="map-container">

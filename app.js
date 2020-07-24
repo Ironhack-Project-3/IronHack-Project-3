@@ -61,6 +61,11 @@ app.use(require('node-sass-middleware')({
   sourceMap: true
 }));
 
+
+const authRoutes = require('./routes/auth-routes');
+app.use('/api', authRoutes);
+
+
 // Express Session setup
 const sessionThread = require('express-session');
 const MongoStoreThread = require('connect-mongo')(sessionThread);
@@ -147,6 +152,8 @@ const users = require('./routes/User-routes')
 
 app.use('/api', users);
 app.use('/api', threads);
+app.use('/api/auth', require('./routes/auth-routes'));
+
 
 
 
