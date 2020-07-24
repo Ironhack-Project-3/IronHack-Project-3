@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 const threadSchema = new Schema({
   title: String,
   description: String,
-  // user: {type: Schema.Types.ObjectId, ref: 'User'}
+  user: {type: Schema.Types.ObjectId, ref: 'User'}
 });
 
 const Thread = mongoose.model('Thread', threadSchema);
