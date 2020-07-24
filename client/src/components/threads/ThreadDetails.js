@@ -17,21 +17,21 @@ class ThreadDetails extends Component {
         this.setState({
           thread: threadObject.data
         }) 
-      } )
+      })
     }
 
   render(){
  
     console.log(this.props)
- 
-if (this.state.thread) {
-    return <div>
+    
+    if (this.state.thread) {
+        return <div>
 
-<h3>{this.state.thread.title}</h3>
-<p>{this.state.thread.description}</p>
-    </div>
+    <h3>{this.state.thread.title}</h3>
+    <p>{this.state.thread.description}</p>
+        </div>
+    }
   }
-}
 }
 
 export default ThreadDetails;

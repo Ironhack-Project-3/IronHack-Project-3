@@ -11,22 +11,22 @@ router.post('/users/new', (req, res, next)=>{
     name: req.body.name,
     email: req.body.email,
     role: [],
-    // // role: {
-    // //   enum: ['user', 'provider'],
-    // // },
-    // incompetence: [],
-    // competence: [],
-    // // incompetence: [['speaking'], ['writing'], ['walking']],
-    // // competence: [['speaking'], ['writing'], ['walking']],
-    // age: req.body.age,
-    // picture: req.body.picture,
-    // biography: req.body.bio,
-    // reviews: [
-    //   {
-    //     user: req.body.user,
-    //     comments: req.body.comments
-    //   }
-    // ]
+    // role: {
+    //   enum: ['user', 'provider'],
+    // },
+    incompetence: [],
+    competence: [],
+    // incompetence: [['speaking'], ['writing'], ['walking']],
+    // competence: [['speaking'], ['writing'], ['walking']],
+    age: req.body.age,
+    picture: req.body.picture,
+    biography: req.body.bio,
+    reviews: [
+      {
+        user: req.body.user,
+        comments: req.body.comments
+      }
+    ]
   })
     .then(response => {
       console.log(response)
@@ -104,6 +104,14 @@ router.get('/users', (req, res, next)=>{
       res.json(err);
     })
 })
+
+router.get('/users/:id', (req, res) => {
+  User.findById(req.params.id)
+  .then((userObject) => {
+    res.json(userObject)
+  })
+})
+
 
 module.exports = router;
 
