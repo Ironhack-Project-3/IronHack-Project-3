@@ -5,12 +5,20 @@ import ThreadList from './threads/ThreadList';
 
 const Home = () => {
   return (
-    <div>
-      <div>
-        <h1>Welcome to home page. Here will be the map and the posting board</h1>
-           <ThreadList/>
+  <div className="homepage"> 
+
+    <h1 className="homepage-header">See all these amazing meat threads!</h1>
+      
+    <div className="map-container">
+      <div className="mapbox">
+
+        <p>This is a map placeholder</p>
       </div>
     </div>
+      <div className="homepage-threads">
+            <ThreadList/>
+      </div>
+      </div>
   )
 }
 export default Home;

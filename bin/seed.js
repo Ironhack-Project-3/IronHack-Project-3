@@ -131,11 +131,6 @@ const Users = [
   }
 ];
 
-
-
-
-
-
  const Threads = [
   {
     title: 'I will escort you to ABH and negotiate your flat contract',
