@@ -24,26 +24,37 @@ class ThreadList extends Component {
 
   render(){
     return(
-      <div>
-        <div style={{width: '60%', float:"left"}}>
+      <div className="threadlist">
+         <div className="add-thread">
+          <h2>Add a New Thread</h2>
+            <AddThread getData={() => this.getAllThreads()}/> {/* <== !!! */}
+        </div>
+        <div className="threadlist-results">
           { this.state.listOfThreads.map( thread => {
             return ( 
             
-              <div key={thread._id}>
+              <div className="threadlist-individual-result" key={thread._id}>
                
                 <Link to={`/threads/${thread._id}`}>
-                  < h3>{thread.title}</h3>
+                  <h3>{thread.title}</h3>
                 </Link>
-                <p style={{maxWidth: '400px'}} >{thread.description} </p>
+                <p>{thread.description} </p>
+
+                <div className="threadlist-buttons">
+                <Link to={`/threads/${thread._id}`}>
+                  <p>Go to Post</p>
+                </Link>
+                <Link to={`/threads/${thread._id}`}>
+                  <p>Add to favourites</p>
+                </Link>
+                </div>
+
               </div>
             
             )})
           }
         </div>
-        <div style={{width: '40%', float:"right"}}>
-          <h2>Add New Thread</h2>
-            <AddThread getData={() => this.getAllThreads()}/> {/* <== !!! */}
-        </div>
+       
       </div>
     )
   }
