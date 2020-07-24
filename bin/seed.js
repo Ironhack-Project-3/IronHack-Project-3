@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 const Thread = require("../models/Thread")
 const User = require("../models/User")
 
-mongoose.connect(process.env.MONGODB_URI||`mongodb://localhost/Database`, {
+mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/Database`, {
   useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -11,8 +11,7 @@ mongoose.connect(process.env.MONGODB_URI||`mongodb://localhost/Database`, {
   throw new Error(`User is not added. ${error}`)
 })
 
-const Users = [
-  {
+const Users = [{
     username: "hans",
     password: "hanshans",
     name: "Hans",
@@ -23,12 +22,10 @@ const Users = [
     address: "Kreuzbergstrasse 48, 10965 Berlin Deutschland",
     picture: "https://i.imgur.com/WvWyXBF.jpg",
     biography: "I'm Hans!",
-    reviews: [
-      {
-        user: "Hans",
-        comments: "I'm Hans' review"
-      }
-    ]
+    reviews: [{
+      user: "Hans",
+      comments: "I'm Hans' review"
+    }]
   },
 
   {
@@ -42,19 +39,17 @@ const Users = [
     address: "Kreuzbergstrasse 40, 10965 Berlin Deutschland",
     picture: "https://i.imgur.com/WvWyXBF.jpg",
     biography: "I'm Greta!",
-    reviews: [
-      {
-        user: "Greta",
-        comments: "I'm Greta's review"
-      }
-    ]
+    reviews: [{
+      user: "Greta",
+      comments: "I'm Greta's review"
+    }]
   }
 
 
 
 ];
 
- const Threads = []
+const Threads = []
 
 
 User
@@ -67,7 +62,7 @@ User
     throw new Error(`User is not added. ${error.message}`)
   })
 
-  Thread
+Thread
   .create(Threads)
   .then(allThreads => {
     console.log(`Thread is added`)
