@@ -7,6 +7,7 @@ const Home = () => {
     <div>
       <div>
         <h1>Welcome to home page this is our map and posting board!</h1>
+        <div id="map" style={{width: '100%' , height: '500px'}}></div>
       </div>
     </div>
   )
