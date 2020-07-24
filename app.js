@@ -7,6 +7,8 @@ const hbs = require("hbs");
 const mongoose = require("mongoose");
 const logger = require("morgan");
 const path = require("path");
+const cors = require('cors');
+
 
 mongoose
   .connect(process.env.MONGODB_URI || "mongodb://localhost/Database", {
@@ -35,6 +37,7 @@ app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
+
 
 app.use(require('node-sass-middleware')({
   src: path.join(__dirname, 'public'),
@@ -117,6 +120,20 @@ app.use("/", authRoutes);
 const newThread = require("./routes/threadRoute");
 app.use("/", newThread);
 */
+
+app.use(cors({
+  credentials: true,
+  origin: ['http://localhost:5555'] // <== this will be the URL of our React app (it will be running on port 3000)
+}));
+
+const threads= require("./routes/Thread-routes")
+const users = require('./routes/User-routes')
+
+app.use('/api', users);
+app.use('/api', threads);
+
+
+
 
 module.exports = app
 
