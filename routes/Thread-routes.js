@@ -74,7 +74,6 @@ router.delete('/threads/:id', (req, res, next)=>{
 })
 
 router.get('/threads/:id', (req, res) => {
-  console.log("HELOOOOOOOo")
   Thread.findById(req.params.id)
   .then((threadObject) => {
     res.json(threadObject)

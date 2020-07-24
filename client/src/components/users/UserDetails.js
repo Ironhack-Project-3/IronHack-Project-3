@@ -4,13 +4,32 @@ import axios from 'axios';
 import { Link, Redirect } from 'react-router-dom';
 
 class UserDetails extends Component {
-    constructor(props){
-        super(props);
-        this.state = {};
+   
+  state = {
+    user: []
     }
+  
+  componentDidMount = () => {
+     axios.get("/api/users/" + this.props.match.params.id)
+    .then(userObject => {
+      console.log(userObject)
+      this.setState({
+        user: userObject.data
+      }) 
+     } )
+  }
 
   render(){
-    return <div>Welcome to user details page!</div>
+ 
+    console.log(this.props)
+    
+    if (this.state.user) {
+        return <div>
+
+    <h3>{this.state.user.name}</h3>
+    <p>{this.state.thread.email}</p>
+        </div>
+    }
   }
 }
 
