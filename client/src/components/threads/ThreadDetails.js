@@ -2,16 +2,37 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link, Redirect } from 'react-router-dom';
+import ThreadList from './ThreadList'
 
 class ThreadDetails extends Component {
-    constructor(props){
-        super(props);
-        this.state = {};
+ 
+    state = {
+    thread: []
+    }
+
+    componentDidMount = () => {
+      axios.get("/api/threads/" + this.props.match.params.id)
+      .then(threadObject => {
+        console.log(threadObject)
+        this.setState({
+          thread: threadObject.data
+        }) 
+      } )
     }
 
   render(){
-    return <div>Welcome to thread details page!</div>
+ 
+    console.log(this.props)
+ 
+if (this.state.thread) {
+    return <div>
+
+<h3>{this.state.thread.title}</h3>
+<p>{this.state.thread.description}</p>
+    </div>
   }
+}
 }
 
 export default ThreadDetails;
+ 
