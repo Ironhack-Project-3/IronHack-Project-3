@@ -32,12 +32,10 @@ const Map = () => {
 
     if (info) {
         info.forEach(specificAddress => {
-        console.log(specificAddress.address)
         addressInfo.push(specificAddress.address)
         })
     }
 
-    console.log("this is the address", info)
   }, [address])
 
   return (    
