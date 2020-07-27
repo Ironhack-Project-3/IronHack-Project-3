@@ -7,8 +7,9 @@ const Thread = require('../models/Thread');
 
 
 router.post('/users/new', (req, res, next)=>{
-  console.log(req.body.name)
+  console.log('this is req.body', req.body)
   User.create({
+    
     name: req.body.name,
     email: req.body.email,
     role: [],

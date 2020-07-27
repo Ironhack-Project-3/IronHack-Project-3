@@ -1,8 +1,11 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Component } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
+import axios from 'axios';
 
 const Map = () => {
+
+ const [address, setAddress] = useState({})
   const [viewport, setViewport] = useState({
     latitude: 52.5200,
     longitude: 13.4050,
@@ -10,11 +13,32 @@ const Map = () => {
     height: "50vh",
     zoom: 12
   });
-
-  console.log(viewport)
   
-  return (
-    
+  let addressInfo = []
+
+  const getAllAddress = () =>{
+    axios.get(`/api/users`)
+    .then(responseFromApi => {
+        setAddress(responseFromApi)
+    })
+  }
+
+  useEffect(() => { 
+      getAllAddress()
+  }, [])
+
+  useEffect(() => { 
+    let info = address.data
+
+    if (info) {
+        info.forEach(specificAddress => {
+        addressInfo.push(specificAddress.address)
+        })
+    }
+
+  }, [address])
+
+  return (    
     <div>
       <ReactMapGL
         {...viewport}
@@ -27,6 +51,7 @@ const Map = () => {
       </ReactMapGL>
     </div>
   );}
+
   
 export default Map;
 

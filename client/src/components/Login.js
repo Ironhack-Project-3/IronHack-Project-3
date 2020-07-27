@@ -39,8 +39,12 @@ export default class Login extends Component {
 
   render() {
     return (
-      <>
-        <h2>Login</h2>
+      <>  
+      <div className="login-page">
+      
+
+        <div className="login-form">
+        <h2>Log In</h2>
         <Form onSubmit={this.handleSubmit}>
           <Form.Group>
             <Form.Label htmlFor='username'>Username: </Form.Label>
@@ -65,8 +69,13 @@ export default class Login extends Component {
           {this.state.message && (
             <Alert variant='danger'>{this.state.message}</Alert>
           )}
+          <div class="login-buttons">
           <Button type='submit'>Login</Button>
+          <Button href="/">Cancel</Button>
+          </div>
         </Form>
+        </div>
+        </div>
       </>
     );
   }
