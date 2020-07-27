@@ -10,7 +10,8 @@ const Home = () => {
   return (
   <div className="homepage"> 
     <Navbar /> 
-    <h1 className="homepage-header">See all these amazing meat threads!</h1>
+    <h1 className="homepage-header">Temp header home</h1>
+
       
     <div className="map-container">
       <div className="mapbox">

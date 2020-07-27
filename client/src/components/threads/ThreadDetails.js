@@ -3,11 +3,17 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link, Redirect } from 'react-router-dom';
 import ThreadList from './ThreadList'
+import { Button } from 'react-bootstrap'
+import EditThread from './EditThread';
 
 class ThreadDetails extends Component {
 
   state = {
-    thread: []
+    thread: [],
+    editForm: false,
+    error: null,
+    title: '',
+    description: ''
   }
 
   componentDidMount = () => {
@@ -19,6 +25,76 @@ class ThreadDetails extends Component {
         })
       })
   }
+
+  deleteThread = () => {
+    const id = this.props.match.params.id;
+    axios.delete(`/api/threads/${id}`).then(() => {
+      this.props.history.push("/threads");
+    });
+  };
+
+  handleChange = event => {
+    const { name, value } = event.target;
+
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    const id = this.props.match.params.id;
+    axios
+      .put(`/api/threads/${id}`, {
+        title: this.state.title,
+        description: this.state.description
+      })
+      .then(response => {
+        this.setState({
+          thread: response.data,
+          title: response.data.title,
+          description: response.data.description,
+          editForm: false
+        });
+        this.props.history.push('/threads');
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
+  toggleEditForm = () => {
+    this.setState({
+      editForm: !this.state.editForm
+    })
+  }
+
+  getData = () => {
+    const id = this.props.match.params.id;
+    axios
+      .get(`/api/threads/${id}`)
+      .then(response => {
+        console.log(response.data);
+        this.setState({
+          thread: response.data, 
+          title: response.data.title,
+          description: response.data.description
+        });
+      })
+      .catch(err => {
+        console.log(err.response);
+        // handle err.response depending on err.response.status
+        if (err.response.status === 404) {
+          this.setState({ error: "Not found" });
+        }
+      });
+  };
+
+  componentDidMount = () => {
+    this.getData();
+  };
+
+
 
   render() {
 
@@ -32,12 +108,15 @@ class ThreadDetails extends Component {
           <p>{this.state.thread.description}</p>
           <div className="thread-details-buttons">
 
-            <Link to={`/threads/${this.state.thread._id}`}>
-              <p>Contact meat</p>
-            </Link>
-            <Link to={`/threads/${this.state.thread._id}`}>
-              <p>Add to favourites</p>
-            </Link>
+            <Link to={`/threads/${this.state.thread._id}`}><p>Contact me</p></Link>
+            <Link to={`/threads/${this.state.thread._id}`}><p>Add to favourites</p></Link>
+                <button onClick={this.toggleEditForm}>Edit Thread</button>
+                <button onClick={this.deleteThread}>Delete Thread</button>
+                {this.state.editForm && (
+                  <EditThread {...this.state}
+                  handleChange={this.handleChange}
+                  handleSubmit={this.handleSubmit} />
+                )}
           </div>
         </div>
       </div>
