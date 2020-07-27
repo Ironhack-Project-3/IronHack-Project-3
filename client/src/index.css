@@ -60,10 +60,6 @@ code {
   justify-content: center;
 }
 .mapbox {
-
-  background-color: seagreen;
-  width:700px;
-  height:500px;
   color:white;
   display: flex;
   justify-content: center;
