@@ -29,6 +29,7 @@ class AddUser extends Component {
   render(){
     return(
       <div>
+        {/* <Navbar />  */}
         <form onSubmit={this.handleFormSubmit}>
           <label>name:</label>
           <input type="text" name="name" value={this.state.name} onChange={ e => this.handleChange(e)}/>

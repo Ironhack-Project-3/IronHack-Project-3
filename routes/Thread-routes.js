@@ -4,7 +4,25 @@ const router  = express.Router();
 const Thread = require('../models/Thread');
 const User = require('../models/User');   
  
- 
+ // ----------------------------?????????--------------------------
+ router.post('/', (req, res) => {
+  const title = req.body.title;
+  const description = req.body.description;
+  const owner = req.user._id;
+
+  Project.create({
+    title,
+    description,
+    owner,
+  })
+  .then(project => {
+    res.status(201).json(project);
+  })
+  .catch(err => {
+    res.json(err);
+  });
+});
+
 // GET route => to retrieve a specific task
 router.get('/users/:userId/threads/:threadId', (req, res, next) => {
   Thread.findById(req.params.threadId)

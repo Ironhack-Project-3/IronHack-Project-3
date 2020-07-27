@@ -5,6 +5,7 @@ const router  = express.Router();
 const User = require('../models/User');
 const Thread = require('../models/Thread');
 
+
 router.post('/users/new', (req, res, next)=>{
   console.log(req.body.name)
   User.create({
@@ -49,9 +50,6 @@ router.get('/users/:id', (req, res, next)=>{
  
   // our projects have array of tasks' ids and 
   // we can use .populate() method to get the whole task objects
-  //                                   ^
-  //                                   |
-  //                                   |
   User.findById(req.params.id).populate('threads')
     .then(response => {
       res.status(200).json(response);
@@ -63,12 +61,11 @@ router.get('/users/:id', (req, res, next)=>{
  
 // PUT route => to update a specific project
 router.put('/users/:id', (req, res, next)=>{
- 
+
   if(!mongoose.Types.ObjectId.isValid(req.params.id)) {
     res.status(400).json({ message: 'Specified id is not valid' });
     return;
   }
- 
   User.findByIdAndUpdate(req.params.id, req.body)
     .then(() => {
       res.json({ message: `User with ${req.params.id} is updated successfully.` });
@@ -85,7 +82,6 @@ router.delete('/users/:id', (req, res, next)=>{
     res.status(400).json({ message: 'Specified id is not valid' });
     return;
   }
- 
   User.findByIdAndRemove(req.params.id)
     .then(() => {
       res.json({ message: `User with ${req.params.id} is removed successfully.` });
@@ -95,6 +91,7 @@ router.delete('/users/:id', (req, res, next)=>{
     })
 })
  
+
 router.get('/users', (req, res, next)=>{
   User.find()
     .then((users) => {
