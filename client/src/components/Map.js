@@ -9,13 +9,16 @@ const Map = () => {
     width: "50vw",
     height: "50vh",
     zoom: 12
-  })};
+  });
 
+  console.log(viewport)
+  
   return (
+    
     <div>
       <ReactMapGL
         {...viewport}
-        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+        mapboxApiAccessToken="pk.eyJ1IjoicmFjaGVsZGx0IiwiYSI6ImNrYzdsMG9qZTBxOGMyc2xqMzV2ejd1czEifQ.4f9dZK4w0vGTCrStvdKzlQ"
         mapStyle='mapbox://styles/mapbox/streets-v11'
         onViewportChange={viewport => {
           setViewport(viewport);
@@ -25,6 +28,6 @@ const Map = () => {
     </div>
   );
   
-
+      }
 export default Map;
 
