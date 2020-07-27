@@ -2,15 +2,12 @@ import React, { Component } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 import { signup } from '../services/auth';
 
-import { MDBInput, MDBFormInline } from 'mdbreact';
-
 export default class Signup extends Component {
   state = {
     username: '',
     password: '',
     name: '',
     address: '',
-    competence: [],
   };
 
   handleChange = event => {
@@ -24,9 +21,9 @@ export default class Signup extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    const { username, password, name, email, address, competence } = this.state;
+    const { username, password, name, email, address } = this.state;
 
-    signup(username, password, name, email, address, competence).then(data => {
+    signup(username, password, name, email, address).then(data => {
       if (data.message) {
         this.setState({
           message: data.message,
@@ -35,7 +32,6 @@ export default class Signup extends Component {
           name: '',
           email: '',
           address: '',
-         competence: [],
         });
       } else {
         this.props.setUser(data);
@@ -50,11 +46,9 @@ export default class Signup extends Component {
       <div className="signup-page">
       <div className="signup-text">
       <p>This is required to sign up</p>
-      <p>Tell us more about yourself, including your skills and location </p>
+      <p>Tell us more about yourself, your skills and location </p>
       </div>
       <div className="signup-form">
-
-
         <h2>Signup as Local</h2>
         
         <Form onSubmit={this.handleSubmit}>
@@ -118,38 +112,13 @@ export default class Signup extends Component {
           {this.state.message && (
             <Alert variant='danger'>{this.state.message}</Alert>
           )}
-
-<div> 
-      <MDBFormInline>
-        <MDBInput
-          label='Writing'
-          type='checkbox'
-          id='writing'
-          containerClass='mr-5'
-        />
-        <MDBInput
-          label='Speaking'
-          type='checkbox'
-          id='speaking'
-          containerClass='mr-5'
-        />
-        {/* <MDBInput
-          type="checkbox"
-          value={label}
-          checked={isChecked}
-          onChange={this.toggleCheckboxChange}
-        /> */}
-      </MDBFormInline>
-    </div>
-
           
           <div className="signup-buttons">
-          <Button type='submit'>Sign Up</Button>    
+          <Button type='submit'>Signup</Button>    
           <Button href="/">Cancel</Button>
         </div>
         </Form>
          
-     
         </div>
         </div>
       </>

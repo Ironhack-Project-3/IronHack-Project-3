@@ -11,12 +11,9 @@ import UserDetails from './components/users/UserDetails'
 import Welcome from './components/Welcome'
 import Signup from './components/Signup'
 import Login from './components/Login';
-
 import AddThread from './components/threads/AddThread';
 import ThreadList from './components/threads/ThreadList';
 import ThreadDetails from './components/threads/ThreadDetails'
-
-
 
 
 class App extends React.Component {

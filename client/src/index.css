@@ -248,9 +248,9 @@ border-radius: 10px;
   display: flex; 
   justify-content: space-evenly;
   width:50%;
+  color:red;
   padding:2%;
 }
- 
 
 .welcome-signup ul li a  {
 
@@ -267,3 +267,37 @@ border-radius: 10px;
 }
 
 
+/***************** SIGN UP *****************/
+
+.signup-page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+}
+.signup-text { 
+  margin-top: -20%;
+}
+
+.signup-text p {
+  margin-top: 30%;
+  margin-right: 10%;
+  text-align: right;
+}
+
+.signup-form {
+  width: 30%; 
+} 
+
+.signup-buttons{
+  display:flex;
+  justify-content: center;
+}
+
+.signup-buttons button {
+  margin-right: 5%;
+}
+
+.signup-checkboxes{
+  
+}
