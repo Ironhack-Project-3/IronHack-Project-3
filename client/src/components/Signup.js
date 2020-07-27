@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 import { signup } from '../services/auth';
-
-import { MDBInput, MDBFormInline } from 'mdbreact';
+ 
 
 export default class Signup extends Component {
   state = {
     username: '',
     password: '',
     name: '',
+    email: '',
+    age: '', // ??????????????????????????
     address: '',
     competence: [],
+    bio: '',
   };
 
   handleChange = event => {
@@ -24,11 +26,11 @@ export default class Signup extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    const { username, password, name, email, address, competence } = this.state;
+    const { username, password, name, email, age, address, competence, bio } = this.state;
 
-    signup(username, password, name, email, address, competence).then(data => {
+    signup( username, password, name, email, age, address, competence, bio ).then(data => {
       if (data.message) {
-        this.setState({
+        this.setState({ 
           message: data.message,
           username: '',
           password: '',
@@ -36,6 +38,7 @@ export default class Signup extends Component {
           email: '',
           address: '',
          competence: [],
+         bio: '',
         });
       } else {
         this.props.setUser(data);
@@ -82,7 +85,7 @@ export default class Signup extends Component {
 
 
           <Form.Group>
-            <Form.Label htmlFor='name'>Email: </Form.Label>
+            <Form.Label htmlFor='email'>Email: </Form.Label>
             <Form.Control
               type='email'
               name='email'
@@ -114,34 +117,30 @@ export default class Signup extends Component {
             />
           </Form.Group>
 
+          <Form> {['checkbox'].map((type) => (
+     <div key={`inline-checkbox`} className="competence">
+      <Form.Check inline label="Walking" type="checkbox"  value={this.state.competence} onChange={this.handleChange} id="walking" />
+      <Form.Check inline label="Speaking" type="checkbox"  value={this.state.competence} onChange={this.handleChange} id="speaking" />
+      <Form.Check inline label="Writing" type="checkbox"  value={this.state.competence} onChange={this.handleChange} id="writing" />
+       </div>
+      ))}
+      </Form>
+
+          <Form.Group>
+            <Form.Label htmlFor='bio'>Bio: </Form.Label>
+            <Form.Control
+              type='bio'
+              name='bio'
+              value={this.state.bio}
+              onChange={this.handleChange}
+              id='bio'
+            />
+          </Form.Group>
+
         
           {this.state.message && (
             <Alert variant='danger'>{this.state.message}</Alert>
           )}
-
-<div> 
-      <MDBFormInline>
-        <MDBInput
-          label='Writing'
-          type='checkbox'
-          id='writing'
-          containerClass='mr-5'
-        />
-        <MDBInput
-          label='Speaking'
-          type='checkbox'
-          id='speaking'
-          containerClass='mr-5'
-        />
-        {/* <MDBInput
-          type="checkbox"
-          value={label}
-          checked={isChecked}
-          onChange={this.toggleCheckboxChange}
-        /> */}
-      </MDBFormInline>
-    </div>
-
           
           <div className="signup-buttons">
           <Button type='submit'>Sign Up</Button>    

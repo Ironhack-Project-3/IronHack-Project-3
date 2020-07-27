@@ -34,14 +34,13 @@ class App extends React.Component {
           {/* <Switch> */}
             <Route exact path="/" component={Welcome}/>
             
-            <Navbar /> 
-
+           
             <Route exact path="/Signup" render={props => <Signup setUser={this.setUser} {...props} />} />
             <Route exact path='/Login' render={(props) => <Login setUser={this.setUser} {...props}/>} />
             <Route exact path="/Home" render={() => <Home />} />
             {/* <Route exact path="/profile" render={() => this.state.user ? <Profile /> : <Redirect to='/' />}/> */}
             <Route exact path="/users" component={UserList}/>
-            <Route exact path="/profile" component={Profile}/>
+            <Route exact path="/profile" render={(props) => <Profile user={this.state.user}  {...props} />} />
             <Route exact path="/users/:id" component={UserDetails} />
             <Route exact path="/threads" component={ThreadList}/>
             <Route exact path="/threads/:id" component={ThreadDetails} />             
