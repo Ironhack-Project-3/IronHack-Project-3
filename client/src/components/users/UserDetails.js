@@ -25,9 +25,9 @@ class UserDetails extends Component {
     
     if (this.state.user) {
         return <div>
-
-    <h3>{this.state.user.name}</h3>
-    <p>{this.state.thread.email}</p>
+          {/* <Navbar />  */}
+          <h3>{this.state.user.name}</h3>
+          <p>{this.state.thread.email}</p>
         </div>
     }
   }

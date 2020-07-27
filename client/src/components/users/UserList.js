@@ -26,6 +26,7 @@ class UserList extends Component {
   render(){
     return(
       <div>
+        {/* <Navbar />  */}
         <div style={{width: '60%', float:"left"}}>
           { this.state.listOfUsers.map( user => {
             return (

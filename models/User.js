@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const userSchema = new Schema({
-  
+
+const userSchema = new Schema({  
   username: {
     type: String,
     required: true,
@@ -18,16 +18,16 @@ const userSchema = new Schema({
  },
   name: {
     type: String,
-    required: true
+    // required: true
   },
   email: {
     type: String,
-    required: true
+    // required: true
   },
   role: {
     type: String,
     enum: ['user', 'provider'],
-    required: true
+    // required: true
   },
   
   incompetence: [['speaking'], ['writing'], ['walking']],
@@ -36,7 +36,7 @@ const userSchema = new Schema({
   age: Number,
   address: {
     type: String,
-    required: true
+    // required: true
   },
   picture: String,
   biography: String,
