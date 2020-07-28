@@ -28,6 +28,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log("app user", this.state.user)
   return(
     <div className="app">
 
@@ -40,9 +41,9 @@ class App extends React.Component {
             <Route exact path="/Home" render={() => <Home />} />
             {/* <Route exact path="/profile" render={() => this.state.user ? <Profile /> : <Redirect to='/' />}/> */}
             <Route exact path="/users" component={UserList}/>
-            <Route exact path="/profile" render={(props) => <Profile user={this.state.user}  {...props} />} />
-            <Route exact path="/users/:id" component={UserDetails} />
-            <Route exact path="/threads" component={ThreadList}/>
+            <Route exact path="/profile" render={(props) => <Profile user={this.state.user} setUser={this.setUser} {...props} />} />
+            <Route exact path="/users/:id" component={UserDetails} /> 
+            <Route exact path="/threads" render={(props) => <ThreadList user={this.state.user} {...props} />}/>
             <Route exact path="/threads/:id" component={ThreadDetails} />             
           {/* </Switch> */}
 

@@ -4,20 +4,31 @@ import axios from 'axios';
 import Navbar from './Navbar'
 
 
-export default function Profile(props) {
+export default class Profile extends React.Component {
+ 
 
-  //const {username} = User;
-(console.log(props.user.username))
+  state = {
+    user: this.props.user
+  }
+    setUser = user => {
+    this.setState({
+      user: user
+    })
+  }
+ render(){
 
   return (
     <>
-    <Navbar/>
+    <Navbar user={this.state.user} setUser={this.setUser}/>
     <div> 
-        <h1>Welcome to the Profile, {props.user.username} </h1>
+        <h1>Welcome to the Profile, {this.props.user.username} </h1>
  
     </div>
     </>
   )
+ }
+  
+
 }
 
  

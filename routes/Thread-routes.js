@@ -9,6 +9,7 @@ const User = require('../models/User');
   const title = req.body.title;
   const description = req.body.description;
   const owner = req.user._id;
+  // const comments = []
 
   Project.create({
     title,
@@ -25,7 +26,7 @@ const User = require('../models/User');
 
 // GET route => to retrieve a specific task
 router.get('/users/:userId/threads/:threadId', (req, res, next) => {
-  Thread.findById(req.params.threadId)
+  Thread.findById(req.params.threadId).populate("user")
   .then(theThread =>{
       res.json(theThread);
   })

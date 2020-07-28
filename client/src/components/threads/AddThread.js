@@ -4,17 +4,19 @@ import axios from 'axios';
 class AddThread extends Component {
   constructor(props){
       super(props);
-      this.state = { title: "", description: "" };
+      this.state = { title: "", description: "", user: ""};
   }
-   
+
+  
   handleFormSubmit = (event) => {
     event.preventDefault();
     const title = this.state.title;
     const description = this.state.description;
-    axios.post("/api/threads", { title, description })
+    const user = this.state.user;
+    axios.post("/api/threads", { title, description, user })
     .then( () => {
          this.props.getData();
-        this.setState({title: "", description: ""});
+         this.setState({title: "", description: "" , user:""});
     })
     .catch( error => console.log(error) )
   }
@@ -25,9 +27,10 @@ class AddThread extends Component {
   }
  
   render(){
+    console.log("out ofthe props", this.props)
+   
     return(
       <div>
-        
         <form className="thread-form" onSubmit={this.handleFormSubmit}>
           <label></label>
           <input type="text" name="title" placeholder="Enter title" value={this.state.title} onChange={ e => this.handleChange(e)}/>
