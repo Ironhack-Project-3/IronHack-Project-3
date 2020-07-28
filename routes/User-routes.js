@@ -18,8 +18,9 @@ router.post('/users/new', (req, res, next)=>{
     // },
     needs: [],
     skills: [],
-    // needs: [['speaking'], ['writing'], ['walking']],
-    // skills: [['speaking'], ['writing'], ['walking']],
+    needs: [['speaking'], ['writing'], ['walking']],
+   
+    skills: [['speaking'], ['writing'], ['walking']],
     age: req.body.age,
     picture: req.body.picture,
     bio: req.body.bio,
@@ -110,6 +111,42 @@ router.get('/users/:id', (req, res) => {
   })
 })
 
+//////////////////////////////////////////////////
+ 
+router.post('/user:id', (req, res, next)=>{ 
+  Thread.create({
+      name: req.body.name,
+      email: req.body.email,   
+  })
+    .then(response => { 
+        User.findByIdAndUpdate(req.body.userID, { $push:{ user: response._id } })
+        .then(theResponse => {
+            res.json(theResponse);
+        })
+        .catch(err => {
+          res.json(err);
+      })
+    })
+    .catch(err => {
+      res.json(err);
+    })
+})
+
+router.put('/user:id', (req, res, next)=>{
+ 
+  if(!mongoose.Types.ObjectId.isValid(req.params.id)) {
+    res.status(400).json({ message: 'Specified id is not valid' });
+    return;
+  }
+ 
+  User.findByIdAndUpdate(req.params.id, req.body)
+    .then(() => {
+      res.json({ message: `User with ${req.params.id} is updated successfully.` });
+    })
+    .catch(err => {
+      res.json(err);
+    })
+})
 
 module.exports = router;
 
