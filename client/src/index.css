@@ -386,3 +386,11 @@ margin-top: 10%;
 .profile-page ul li {
   list-style: none;
 }
+
+.profile-info {
+
+  background-color: lightcyan;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
