@@ -26,6 +26,7 @@ class ThreadList extends Component {
 
     console.log("threadList props", this.props)
     return(
+      <div className="threads">
       <div className="threadlist">
          <div className="add-thread">
           <h2>Add a New Thread</h2>
@@ -58,6 +59,7 @@ class ThreadList extends Component {
           }
         </div>
        
+      </div>
       </div>
     )
   }

@@ -28,16 +28,20 @@ const userSchema = new Schema({
     type: String,
     enum: ['user', 'provider'],
     // required: true
+
   }, 
-  incompetence: [['speaking'], ['writing'], ['walking']],
-  competence: [['speaking'], ['writing'], ['walking']],
+
+  needs: [['write'], ['walk'], ['call'], ['tandem'], ['hang']],
+  skills: [['write'], ['walk'], ['call'], ['tandem'], ['hang']],
+
+
   age: Number,
   address: {
     type: String,
     // required: true
   },
   picture: String,
-  biography: String,
+  bio: String,
   reviews: [
     {
       user: String,

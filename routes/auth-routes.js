@@ -10,7 +10,7 @@ const bcrypt = require('bcryptjs');
 
 router.post('/signup', (req, res) => {
   console.log(req.body)
-  const { username, password, email, name, address, bio, competence } = req.body;
+  const { username, password, email, name, age, address, bio, skills } = req.body;
 
   if (!password || password.length < 8) {
     return res
@@ -33,7 +33,7 @@ router.post('/signup', (req, res) => {
       const salt = bcrypt.genSaltSync();
       const hash = bcrypt.hashSync(password, salt);
 
-      return User.create({ username: username, password: hash, email: email, name: name, address: address, bio: bio, competence: competence }).then(
+      return User.create({ username: username, password: hash, email: email, age:age, name: name, address: address, bio: bio, skills: skills }).then(
         dbUser => {
 
           req.login(dbUser, err => {

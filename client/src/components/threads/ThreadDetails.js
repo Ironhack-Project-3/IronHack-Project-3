@@ -4,7 +4,8 @@ import axios from 'axios';
 import { Link, Redirect } from 'react-router-dom';
 import ThreadList from './ThreadList'
 import { Button } from 'react-bootstrap'
-import EditThread from './EditThread';
+import EditThread from './EditThread'
+import Navbar from '../Navbar'
 
 class ThreadDetails extends Component {
 
@@ -56,7 +57,7 @@ class ThreadDetails extends Component {
           description: response.data.description,
           editForm: false
         });
-        this.props.history.push('/threads');
+        this.props.history.push(`/threads/`);
       })
       .catch(err => {
         console.log(err);
@@ -97,11 +98,14 @@ class ThreadDetails extends Component {
 
 
   render() {
-
-    console.log(this.props)
+ 
 
     if (this.state.thread) {
-      return <div className="thread-details">
+      return   (
+      <>
+      <Navbar/> 
+       <div className="thread-details">
+
         <div className="thread-details-text">
 
           <h3>{this.state.thread.title}</h3>
@@ -110,17 +114,24 @@ class ThreadDetails extends Component {
 
             <Link to={`/threads/${this.state.thread._id}`}><p>Contact me</p></Link>
             <Link to={`/threads/${this.state.thread._id}`}><p>Add to favourites</p></Link>
+
+            </div>
+
+            <div className="thread-details-edit-delete-buttons">
+           
                 <button onClick={this.toggleEditForm}>Edit Thread</button>
                 <button onClick={this.deleteThread}>Delete Thread</button>
+                </div>
                 {this.state.editForm && (
                   <EditThread {...this.state}
                   handleChange={this.handleChange}
                   handleSubmit={this.handleSubmit} />
                 )}
-          </div>
+          
         </div>
       </div>
-
+      </>
+      )
     }
   }
 }
