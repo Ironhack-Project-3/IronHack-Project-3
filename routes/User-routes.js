@@ -7,21 +7,22 @@ const Thread = require('../models/Thread');
 
 
 router.post('/users/new', (req, res, next)=>{
-  console.log(req.body.name)
+  console.log('this is req.body', req.body)
   User.create({
+    
     name: req.body.name,
     email: req.body.email,
     role: [],
     // role: {
     //   enum: ['user', 'provider'],
     // },
-    incompetence: [],
-    competence: [],
-    // incompetence: [['speaking'], ['writing'], ['walking']],
-    // competence: [['speaking'], ['writing'], ['walking']],
+    needs: [],
+    skills: [],
+    // needs: [['speaking'], ['writing'], ['walking']],
+    // skills: [['speaking'], ['writing'], ['walking']],
     age: req.body.age,
     picture: req.body.picture,
-    biography: req.body.bio,
+    bio: req.body.bio,
     reviews: [
       {
         user: req.body.user,

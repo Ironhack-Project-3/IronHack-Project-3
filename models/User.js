@@ -8,7 +8,7 @@ const userSchema = new Schema({
     index: {
       unique: true
     }
-  },
+},
   password: {
     type: String,
     required: true,
@@ -28,10 +28,12 @@ const userSchema = new Schema({
     type: String,
     enum: ['user', 'provider'],
     // required: true
-  },
-  
-  incompetence: [['speaking'], ['writing'], ['walking']],
-  competence: [['speaking'], ['writing'], ['walking']],
+
+  }, 
+
+  needs: [['write'], ['walk'], ['call'], ['tandem'], ['hang']],
+  skills: [['write'], ['walk'], ['call'], ['tandem'], ['hang']],
+
 
   age: Number,
   address: {
@@ -39,7 +41,7 @@ const userSchema = new Schema({
     // required: true
   },
   picture: String,
-  biography: String,
+  bio: String,
   reviews: [
     {
       user: String,
@@ -47,7 +49,24 @@ const userSchema = new Schema({
     }
   ],
   thread: {type: Schema.Types.ObjectId, ref: 'Thread'}
+},
+{
+  timestamps: true
 });
+//-----------------is this right-----?????----------------------------------
+
+// const threadSchema = new Schema({
+//   title: String,
+//   description: String,
+//   owner: { type: Schema.Types.ObjectId, ref: 'User' },
+//   comment: [
+//     {
+//       type: Schema.Types.ObjectId,
+//       ref: 'comments'
+//     }
+//   ]
+// });
+//------------------??or in the thread schema---------------------------------
 
 const User = mongoose.model('User', userSchema);
 module.exports = User;

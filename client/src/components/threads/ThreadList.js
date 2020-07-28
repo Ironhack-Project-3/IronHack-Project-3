@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import AddThread from './AddThread';
 
 class ThreadList extends Component {
-  constructor(){
-      super();
+  constructor(props){
+      super(props);
       this.state = { listOfThreads: [] };
   }
 
@@ -23,7 +23,10 @@ class ThreadList extends Component {
   }
 
   render(){
+
+    console.log("threadList props", this.props)
     return(
+      <div className="threads">
       <div className="threadlist">
          <div className="add-thread">
           <h2>Add a New Thread</h2>
@@ -34,8 +37,9 @@ class ThreadList extends Component {
             return ( 
             
               <div className="threadlist-individual-result" key={thread._id}>
-               
+                   
                 <Link to={`/threads/${thread._id}`}>
+
                   <h3>{thread.title}</h3>
                 </Link>
                 <p>{thread.description} </p>
@@ -55,6 +59,7 @@ class ThreadList extends Component {
           }
         </div>
        
+      </div>
       </div>
     )
   }

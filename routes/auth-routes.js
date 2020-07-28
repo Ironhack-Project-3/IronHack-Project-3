@@ -2,16 +2,15 @@
 
 const express = require('express');
 const router = express.Router();
-
+const User = require('../models/User');
 const passport = require('passport');
 const bcrypt = require('bcryptjs');
 
-// require the user model !!!!
-const User = require('../models/User');
 
 
 router.post('/signup', (req, res) => {
-  const { username, password } = req.body;
+  console.log(req.body)
+  const { username, password, email, name, age, address, bio, skills } = req.body;
 
   if (!password || password.length < 8) {
     return res
@@ -34,7 +33,7 @@ router.post('/signup', (req, res) => {
       const salt = bcrypt.genSaltSync();
       const hash = bcrypt.hashSync(password, salt);
 
-      return User.create({ username: username, password: hash }).then(
+      return User.create({ username: username, password: hash, email: email, age:age, name: name, address: address, bio: bio, skills: skills }).then(
         dbUser => {
 
           req.login(dbUser, err => {
