@@ -24,6 +24,7 @@ class ThreadList extends Component {
 
   render(){
     return(
+      <div className="threads">
       <div className="threadlist">
          <div className="add-thread">
           <h2>Add a New Thread</h2>
@@ -55,6 +56,7 @@ class ThreadList extends Component {
           }
         </div>
        
+      </div>
       </div>
     )
   }

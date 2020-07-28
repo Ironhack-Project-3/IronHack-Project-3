@@ -9,9 +9,9 @@ export default class Signup extends Component {
     password: '',
     name: '',
     email: '',
-    age: '', // ??????????????????????????
+    age: null,
     address: '',
-    competence: [],
+    skills: [],
     bio: '',
   };
 
@@ -26,18 +26,19 @@ export default class Signup extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    const { username, password, name, email, age, address, competence, bio } = this.state;
+    const { username, password, name, email, age, address, skills, bio } = this.state;
 
-    signup( username, password, name, email, age, address, competence, bio ).then(data => {
+    signup( username, password, name, email, age, address, skills, bio ).then(data => {
       if (data.message) {
         this.setState({ 
           message: data.message,
           username: '',
           password: '',
+          age: null,
           name: '',
           email: '',
           address: '',
-         competence: [],
+          skills: [],
          bio: '',
         });
       } else {
@@ -56,7 +57,6 @@ export default class Signup extends Component {
       <p>Tell us more about yourself, including your skills and location </p>
       </div>
       <div className="signup-form">
-
 
         <h2>Signup as Local</h2>
         
@@ -81,8 +81,6 @@ export default class Signup extends Component {
               id='password'
             />
           </Form.Group>
-
-
 
           <Form.Group>
             <Form.Label htmlFor='email'>Email: </Form.Label>
@@ -117,11 +115,26 @@ export default class Signup extends Component {
             />
           </Form.Group>
 
+          <Form.Group>
+            <Form.Label htmlFor='age'>Age: </Form.Label>
+            <Form.Control
+              type='age'
+              name='age'
+              value={this.state.age}
+              onChange={this.handleChange}
+              id='age'
+            />
+          </Form.Group>
+
           <Form> {['checkbox'].map((type) => (
-     <div key={`inline-checkbox`} className="competence">
-      <Form.Check inline label="Walking" type="checkbox"  value={this.state.competence} onChange={this.handleChange} id="walking" />
-      <Form.Check inline label="Speaking" type="checkbox"  value={this.state.competence} onChange={this.handleChange} id="speaking" />
-      <Form.Check inline label="Writing" type="checkbox"  value={this.state.competence} onChange={this.handleChange} id="writing" />
+     <div key={`inline-checkbox`} className="skills">
+       <p>Skills:</p>
+      <Form.Check inline label="I can translate in writing" type="checkbox"  value={this.state.skills} onChange={this.handleChange} id="write" />
+      <Form.Check inline label="I can accompany to an Amt" type="checkbox"  value={this.state.skills} onChange={this.handleChange} id="walk" />
+      <Form.Check inline label="I can translate on a phone call" type="checkbox"  value={this.state.skills} onChange={this.handleChange} id="call" />
+      <Form.Check inline label="I can be a tandem partner" type="checkbox"  value={this.state.skills} onChange={this.handleChange} id="tandem" />
+      <Form.Check inline label="I'd like to hang out" type="checkbox"  value={this.state.skills} onChange={this.handleChange} id="hang" />
+
        </div>
       ))}
       </Form>
