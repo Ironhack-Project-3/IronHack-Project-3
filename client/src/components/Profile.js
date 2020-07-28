@@ -5,16 +5,23 @@ import Navbar from './Navbar'
 
 
 export default function Profile(props) {
-
-  //const {username} = User;
-(console.log(props.user.username))
-
+  
   return (
+
     <>
     <Navbar/>
-    <div> 
-        <h1>Welcome to the Profile, {props.user.username} </h1>
- 
+    <div className="profile-page">  
+    <div className="profile-info">
+        <h1>Your Profile</h1>
+        <ul>
+          <li>Username: {props.user.username} </li>
+          <li>Email: {props.user.email} </li>
+          <li>Name: {props.user.name} </li>
+          <li>Age: {props.user.age}</li>
+          <li>Skills: {props.user.skills}</li>
+          <li>Bio: {props.user.bio}</li>
+        </ul>
+        </div>
     </div>
     </>
   )

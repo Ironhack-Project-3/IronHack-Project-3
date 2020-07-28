@@ -30,8 +30,8 @@ const userSchema = new Schema({
     // required: true
   },
   
-  incompetence: [['speaking'], ['writing'], ['walking']],
-  competence: [['speaking'], ['writing'], ['walking']],
+  needs: [['write'], ['walk'], ['call'], ['tandem'], ['hang']],
+  skills: [['write'], ['walk'], ['call'], ['tandem'], ['hang']],
 
   age: Number,
   address: {
@@ -39,7 +39,7 @@ const userSchema = new Schema({
     // required: true
   },
   picture: String,
-  biography: String,
+  bio: String,
   reviews: [
     {
       user: String,
