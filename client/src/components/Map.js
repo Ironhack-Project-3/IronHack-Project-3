@@ -19,7 +19,7 @@ const Map = () => {
     longitude: 13.4050,
     width: "50vw",
     height: "50vh",
-    zoom: 12
+    zoom: 10
   });
   
   let addressInfo = []
@@ -48,8 +48,8 @@ const Map = () => {
   }, [])
 
 
-  useEffect(()=>{
-console.log(address,"recognize me")
+  useEffect(() => {
+    console.log(address,"recognize me")
   },[address])
 
   useEffect(() => { 
@@ -76,30 +76,16 @@ console.log(address,"recognize me")
         }}
       >
 
-{address.map(location => {
-  console.log(location)
-               return  <Marker 
-                  key={location._id}
-                  longitude={ location[0] }
-                  latitude={ location[1] }
-                  >
-                   <Pin size={5} />
-
-                   {/* <button class="marker-btn">
-                    <img src = { sunset.img } alt="sunset icon" />
-                   </button> */}
-                   
-                   {/* <Link to={`/spotdetails/${sunset._id}`}>
-                   <img className="marker-btn-img" src = { sunset.img } alt="sunset icon" />
-                  </Link> */}
-                </Marker>
-}
-
-            )}
-
-
+  {address.map(location => {
+    console.log(location)
+      return  <Marker 
+        key={location._id}
+        longitude={ location[0] }
+        latitude={ location[1] }
+        >
+        <Pin size={5} />
+        </Marker>})}
       </ReactMapGL>
-
     </div>
   );}
 
