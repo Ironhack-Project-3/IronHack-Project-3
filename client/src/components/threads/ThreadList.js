@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import AddThread from './AddThread';
+import Navbar from '../Navbar'
 
 class ThreadList extends Component {
   constructor(props){
@@ -26,6 +27,7 @@ class ThreadList extends Component {
 
     console.log("threadList props", this.props)
     return(
+      <>
       <div className="threads">
       <div className="threadlist">
          <div className="add-thread">
@@ -61,6 +63,7 @@ class ThreadList extends Component {
        
       </div>
       </div>
+      </>
     )
   }
 }

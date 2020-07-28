@@ -34,8 +34,6 @@ class App extends React.Component {
 
           {/* <Switch> */}
             <Route exact path="/" component={Welcome}/>
-            
-           
             <Route exact path="/Signup" render={props => <Signup setUser={this.setUser} {...props} />} />
             <Route exact path='/Login' render={(props) => <Login setUser={this.setUser} {...props}/>} />
             <Route exact path="/Home" render={() => <Home />} />

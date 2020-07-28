@@ -80,6 +80,7 @@ class ThreadDetails extends Component {
           thread: response.data, 
           title: response.data.title,
           description: response.data.description
+          
         });
       })
       .catch(err => {
@@ -111,7 +112,7 @@ class ThreadDetails extends Component {
           <h3>{this.state.thread.title}</h3>
           <p>{this.state.thread.description}</p>
           <div className="thread-details-buttons">
-
+            
             <Link to={`/threads/${this.state.thread._id}`}><p>Contact me</p></Link>
             <Link to={`/threads/${this.state.thread._id}`}><p>Add to favourites</p></Link>
 

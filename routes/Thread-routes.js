@@ -36,15 +36,13 @@ router.get('/users/:userId/threads/:threadId', (req, res, next) => {
 });
  
 // POST route => to create a new task
-router.post('/threads', (req, res, next)=>{
-  console.log("work", req.body)
+router.post('/threads', (req, res, next)=>{ 
   Thread.create({
       title: req.body.title,
       description: req.body.description,  
       user: req.body.userID
   })
-    .then(response => {
-      console.log("is this the response?")
+    .then(response => { 
         User.findByIdAndUpdate(req.body.userID, { $push:{ threads: response._id } })
         .then(theResponse => {
             res.json(theResponse);
@@ -100,7 +98,6 @@ router.get('/threads/:id', (req, res) => {
 })
 
 router.get('/threads', (req, res, next)=>{
-  console.log("HELLO FROM ALL HREADS")
   Thread.find()
     .then((threads) => {
       res.json(threads);
