@@ -6,8 +6,8 @@ import { Form, Button } from 'react-bootstrap';
 export default class extends Component {
   render() {
     return (
+      
       <div className="edit-thread">
-        <h2></h2>
         <Form onSubmit={this.props.handleSubmit}>
           <Form.Group> 
             <Form.Control
