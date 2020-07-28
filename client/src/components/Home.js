@@ -12,6 +12,7 @@ const Home = () => {
     <Navbar /> 
     <h1 className="homepage-header">Temp header home</h1>
 
+    <img src='../public/images/layout.jpg'/>
       
     <div className="map-container">
       <div className="mapbox">
