@@ -3,10 +3,8 @@ import axios from 'axios';
 //import User from '../../../models/User';
 import Navbar from './Navbar'
 
-
 export default class Profile extends React.Component {
  
-
   state = {
     user: this.props.user
   }
@@ -16,23 +14,23 @@ export default class Profile extends React.Component {
     })
   }
  render(){
-
-// export default function Profile(props) {
+ 
   
-  return (
-
-    <>
-    <Navbar  user={this.state.user} setUser={this.setUser}/>
+  return ( 
+     <>
+    <Navbar user={this.state.user} setUser={this.setUser}/>
+    
+    <h1>Welcome to the Profile, {this.props.user.username} </h1>
     <div className="profile-page">  
     <div className="profile-info">
-        <h1>Welcome, {this.props.user.username}</h1>
+        <h1>Your Profile</h1>
         <ul>
-          <li>Username: {props.user.username} </li>
-          <li>Email: {props.user.email} </li>
-          <li>Name: {props.user.name} </li>
-          <li>Age: {props.user.age}</li>
-          <li>Skills: {props.user.skills}</li>
-          <li>Bio: {props.user.bio}</li>
+          <li>Username: {this.props.user.username} </li>
+          <li>Email: {this.props.user.email} </li>
+          <li>Name: {this.props.user.name} </li>
+          <li>Age: {this.props.user.age}</li>
+          <li>Skills: {this.props.user.skills}</li>
+          <li>Bio: {this.props.user.bio}</li>
         </ul>
         </div>
     </div>
@@ -41,7 +39,6 @@ export default class Profile extends React.Component {
  }
   
 }
-
     
 
  

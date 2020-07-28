@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import {logout} from '../services/auth'
 const Navbar = (props) => {
 
-  const  handleLogout= props=>{
+  const  handleLogout= ()=>{
     logout().then(()=>{
-      props.setUser(null)
+      props.setUser()
     })
   }
   return (
