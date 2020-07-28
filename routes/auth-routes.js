@@ -2,12 +2,10 @@
 
 const express = require('express');
 const router = express.Router();
-
+const User = require('../models/User');
 const passport = require('passport');
 const bcrypt = require('bcryptjs');
 
-// require the user model !!!!
-const User = require('../models/User');
 
 
 router.post('/signup', (req, res) => {
