@@ -149,7 +149,6 @@ app.use(cors({
 
 const threads= require("./routes/Thread-routes")
 const users = require('./routes/User-routes')
-
 app.use('/api', users);
 app.use('/api', threads);
 app.use('/api/auth', require('./routes/auth-routes'));

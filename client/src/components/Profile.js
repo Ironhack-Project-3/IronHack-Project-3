@@ -4,11 +4,29 @@ import axios from 'axios';
 import Navbar from './Navbar'
 
 
-export default function Profile(props) {
+
+export default class Profile extends React.Component {
+ 
+
+  state = {
+    user: this.props.user
+  }
+    setUser = user => {
+    this.setState({
+      user: user
+    })
+  }
+ render(){
+
+// export default function Profile(props) {
   
   return (
 
     <>
+    <Navbar user={this.state.user} setUser={this.setUser}/>
+    <div> 
+        <h1>Welcome to the Profile, {this.props.user.username} </h1>
+ 
     <Navbar/>
     <div className="profile-page">  
     <div className="profile-info">
@@ -22,9 +40,13 @@ export default function Profile(props) {
           <li>Bio: {props.user.bio}</li>
         </ul>
         </div>
+
     </div>
     </>
   )
+ }
+  
+
 }
 
  
