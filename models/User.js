@@ -18,27 +18,19 @@ const userSchema = new Schema({
  },
   name: {
     type: String,
-    // required: true
   },
   email: {
     type: String,
-    // required: true
   },
   role: {
     type: String,
-    enum: ['user', 'provider'],
-    // required: true
-
+    enum: ['user', 'provider'], 
   }, 
-
   needs: [['write'], ['walk'], ['call'], ['tandem'], ['hang']],
   skills: [['write'], ['walk'], ['call'], ['tandem'], ['hang']],
-
-
   age: Number,
   address: {
     type: String,
-    // required: true
   },
   picture: String,
   bio: String,

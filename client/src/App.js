@@ -1,7 +1,8 @@
 import React, { Component } from 'react'; 
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
-import { Switch, Route, } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
+// import { Route, Redirect } from 'react-router-dom';
 import Home from './components/Home.js';
 import Profile from './components/Profile';
 import Navbar from './components/Navbar'
@@ -14,6 +15,8 @@ import Login from './components/Login';
 import AddThread from './components/threads/AddThread';
 import ThreadList from './components/threads/ThreadList';
 import ThreadDetails from './components/threads/ThreadDetails'
+import ProtectedRoute from './components/ProtectedRoute';
+
 
 
 class App extends React.Component {
@@ -29,25 +32,37 @@ class App extends React.Component {
 
   render() {
     console.log("app user", this.state.user)
-  return(
+   return(
     <div className="app">
 
-          {/* <Switch> */}
+          <Switch>
             <Route exact path="/" component={Welcome}/>
             <Route exact path="/Signup" render={props => <Signup setUser={this.setUser} {...props} />} />
             <Route exact path='/Login' render={(props) => <Login setUser={this.setUser} {...props}/>} />
-            <Route exact path="/Home" render={() => <Home />} />
-            {/* <Route exact path="/profile" render={() => this.state.user ? <Profile /> : <Redirect to='/' />}/> */}
+            <ProtectedRoute
+              exact path='/Home'
+              
+              user={this.state.user}
+              component={Home}
+            />
             <Route exact path="/users" component={UserList}/>
-            <Route exact path="/profile" render={(props) => <Profile user={this.state.user} setUser={this.setUser} {...props} />} />
+            <ProtectedRoute
+              exact
+              path='/profile'
+              // this is an additional prop that is taken care of with ...rest
+              setUser={this.setUser}
+              user={this.state.user}
+              component={Profile}
+            />
+            {/* <ProtectedRoute exact path="/profile" component={Profile} render={(props) => <Profile user={this.state.user} setUser={this.setUser} {...props} />} /> */}
             <Route exact path="/users/:id" component={UserDetails} /> 
             <Route exact path="/threads" render={(props) => <ThreadList user={this.state.user} {...props} />}/>
             <Route exact path="/threads/:id" component={ThreadDetails} />             
-          {/* </Switch> */}
+          </Switch>
 
-    </div>
-  );
-}
+      </div>
+    );
+  }
 }
 
 

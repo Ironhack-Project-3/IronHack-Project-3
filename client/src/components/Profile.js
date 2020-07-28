@@ -7,7 +7,6 @@ import EditUser from './users/EditUser'
 
 export default class Profile extends React.Component {
  
-
   state = {
     user: this.props.user,
     editUser: false,
@@ -21,8 +20,6 @@ export default class Profile extends React.Component {
     })
   }
 
-
-/////////////////////////////////////////
 
   handleChange = event => {
     const { name, value } = event.target;
@@ -85,7 +82,8 @@ export default class Profile extends React.Component {
     this.getData();
   };
 
-///////////////////////////////////////////////////
+
+
 
 
 
@@ -95,13 +93,13 @@ export default class Profile extends React.Component {
   return ( 
      <>
     <Navbar user={this.state.user} setUser={this.setUser}/>
-     
-  
+
     <div className="profile-page">  
     <div className="profile-info">
         <ul>
 
-        <h1>Welcome to your profile, {this.props.user.username}!</h1>
+        <h1>Welcome, {this.props.user.username}!</h1>
+
           <li>Username: {this.props.user.username} </li>
           <li>Email: {this.props.user.email} </li>
           <li>Name: {this.props.user.name} </li>
@@ -109,6 +107,8 @@ export default class Profile extends React.Component {
           <li>Skills: {this.props.user.skills}</li>
           <li>Bio: {this.props.user.bio}</li>
         </ul>
+        </div>
+
         <div className="user-details-edit-delete-buttons">
            
            <button onClick={this.toggleEditUser}>Edit User</button> 
@@ -123,6 +123,7 @@ export default class Profile extends React.Component {
 
         </div>
        
+
     </div>
 
 
@@ -131,7 +132,7 @@ export default class Profile extends React.Component {
   )
  }
   
-
 }
+    
 
  

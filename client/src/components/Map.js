@@ -20,6 +20,7 @@ const Map = () => {
     width: "50vw",
     height: "50vh",
     zoom: 12
+    // <div id="map" style = 'width: 100%; height: 500px;' ></div>
   });
   
   let addressInfo = []
