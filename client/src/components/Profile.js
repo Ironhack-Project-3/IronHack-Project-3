@@ -13,11 +13,16 @@ export default class Profile extends React.Component {
     editUser: false,
     error: null,
     name: '',
-    email:'', 
+    email: '', 
+    age: null,
+    address: '',
+    skills: [],
+    bio: '',
   }
     setUser = user => {
     this.setState({
       user: user
+      
     })
   }
 
@@ -38,16 +43,25 @@ export default class Profile extends React.Component {
     axios
       .put(`/user:id`, {
         name: this.state.name,
-        email: this.state.email
+        email: this.state.email,
+        age: this.state.age,
+        address: this.state.address,
+        skilss:this.state.skills,
+        bio: this.state.bio,
       })
       .then(response => {
         this.setState({
           user: response.data,
+          username: response.data.username,
           name: response.data.name,
           email: response.data.email,
+          age: response.data.age,
+          address: response.data.address,
+          skills: response.data.skills, 
+          bio: response.data.bio,  
           editForm: false
         });
-        this.props.history.push(`/Profile`);
+        this.props.history.push(`/profile`);
       })
       .catch(err => {
         console.log(err);
@@ -56,7 +70,7 @@ export default class Profile extends React.Component {
 
   toggleEditUser = () => {
     this.setState({
-      editForm: !this.state.editUser
+      editUser: !this.state.editUser
     })
   }
 
@@ -67,10 +81,16 @@ export default class Profile extends React.Component {
       .then(response => {
         console.log(response.data);
         this.setState({
-          thread: response.data, 
-          title: response.data.name,
-          description: response.data.email
+          user: response.data, 
+          username: response.data.username,
+          name: response.data.name,
+          email: response.data.email, 
+          age: response.data.age,
+          skilss: response.data.skills,
+          address: response.data.address,
+          bio: response.data.bio,  
         });
+     
       })
       .catch(err => {
         console.log(err.response);
@@ -89,9 +109,7 @@ export default class Profile extends React.Component {
 
 
 
- render(){
- 
-  
+ render(){  
   return ( 
      <>
     <Navbar user={this.state.user} setUser={this.setUser}/>
@@ -102,22 +120,25 @@ export default class Profile extends React.Component {
         <ul>
 
         <h1>Welcome to your profile, {this.props.user.username}!</h1>
-          <li>Username: {this.props.user.username} </li>
-          <li>Email: {this.props.user.email} </li>
-          <li>Name: {this.props.user.name} </li>
+          <li>Username: {this.props.user.username}</li>
+          <li>Email: {this.props.user.email}</li>
+          <li>Name: {this.props.user.name}</li>
           <li>Age: {this.props.user.age}</li>
+          <li>Address: {this.props.user.address}</li>
           <li>Skills: {this.props.user.skills}</li>
           <li>Bio: {this.props.user.bio}</li>
         </ul>
         <div className="user-details-edit-delete-buttons">
-           
            <button onClick={this.toggleEditUser}>Edit User</button> 
            </div>
         <div className="edit-user-form">
-           {this.state.editForm && (
+           {this.state.editUser && (
              <EditUser {...this.state}
+            {...this.props}
+            setUser={this.props.setUser}
              handleChange={this.handleChange}
-             handleSubmit={this.handleSubmit} />
+             handleSubmit={this.handleSubmit} 
+             toggleEditUser={this.toggleEditUser} />             
            )}
      </div>
 

@@ -11,9 +11,9 @@ const Navbar = (props) => {
   return (
     <nav className="nav-style">
       <ul>
-        <li><Link to='/Home'>Home</Link></li>
-        <li><Link to='/Profile'>Profile</Link></li>
-        <li><Link to='/Threads'>Postboard</Link></li>
+        <li><Link to='/home'>Home</Link></li>
+        <li><Link to='/profile'>Profile</Link></li>
+        <li><Link to='/threads'>Postboard</Link></li>
     <li><Link to='/' onClick={()=>handleLogout(props)}>Logout</Link></li>
       </ul>
     </nav>
