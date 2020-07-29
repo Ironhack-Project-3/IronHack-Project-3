@@ -18,9 +18,6 @@ router.post('/users/new', (req, res, next)=>{
     // },
     needs: [],
     skills: [],
-    needs: [['speaking'], ['writing'], ['walking']],
-   
-    skills: [['speaking'], ['writing'], ['walking']],
     address: req.body.address,
     age: req.body.age,
     picture: req.body.picture,

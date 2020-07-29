@@ -40,6 +40,7 @@ class ThreadList extends Component {
     // console.log("threadList props", this.props)
     return (
       <>
+ 
         {/* <Navbar /> */}
         <div className="threads">
           <div className="threadlist">
@@ -77,12 +78,9 @@ class ThreadList extends Component {
                     <Link to={`/threads/${thread._id}`}>
                       <h3>{thread.title}</h3>
                     </Link>
-
                     <Link to={`/profile/${thread.user}`}>
                       <h5>{name}</h5>
                     </Link>
-
-                    <p>{thread.description} </p>
 
                     <div className="threadlist-buttons">
                       <Link to={`/threads/${thread._id}`}>
