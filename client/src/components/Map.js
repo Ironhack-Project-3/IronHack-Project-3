@@ -74,8 +74,9 @@ const Map = () => {
         onViewportChange={viewport => {
           setViewport(viewport);
         }}
-      >
+      > 
 
+      
   {address.map(location => {
     console.log(location)
       return  <Marker 

@@ -19,7 +19,7 @@ export default class Signup extends Component {
     const { name, value } = event.target;
 
     this.setState({
-      [name]: value
+      [name]: value 
     });
   };
 
@@ -39,7 +39,7 @@ export default class Signup extends Component {
           email: '',
           address: '',
           skills: [],
-         bio: '',
+          bio: '',
         });
       } else {
         this.props.setUser(data);
