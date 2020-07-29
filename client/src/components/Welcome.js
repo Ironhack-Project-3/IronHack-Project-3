@@ -10,6 +10,7 @@ export default class Welcome extends Component {
           <div className="welcome-picture">
             <img src={ampelman} alt="pic" />
           </div>
+      
           <div className="welcome-text">
             <h2>Sign up to get help from native German speakers</h2>
             <p></p>
@@ -17,19 +18,24 @@ export default class Welcome extends Component {
             <div className="welcome-signup">
               <ul>
                 <li>
-                  <Link to="/login">Log In</Link>
+                  <Link to="/login">log in</Link>
                 </li>
                 <li>
-                  <Link to="/signup">Signup as Newcomer</Link>
+                  <Link to="/signup">sign up as newcomer</Link>
                 </li>
                 <li>
-                  <Link to="/signup">Signup as Local</Link>
+                  <Link to="/signup">signup as local</Link>
                 </li>
-              </ul>
+              </ul> 
+              </div>
             </div>
-          </div>
+           
         </div>
       </>
     );
   }
 }
+
+
+// picture bigger start hieeger 
+// tex ighter

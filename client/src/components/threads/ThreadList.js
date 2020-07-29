@@ -39,7 +39,7 @@ class ThreadList extends Component {
             return ( 
             
               <div className="threadlist-individual-result" key={thread._id}>
-                   
+                  
                 <Link to={`/threads/${thread._id}`}>
 
                   <h3>{thread.title}</h3>
@@ -50,9 +50,7 @@ class ThreadList extends Component {
                 <Link to={`/threads/${thread._id}`}>
                   <p>Go to Post</p>
                 </Link>
-                <Link to={`/threads/${thread._id}`}>
-                  <p>Add to favourites</p>
-                </Link>
+               
                 </div>
 
               </div>

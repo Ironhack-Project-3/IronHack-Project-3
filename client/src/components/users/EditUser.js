@@ -62,6 +62,7 @@ export default class extends Component {
   render() { 
  
     return (
+      <div className="edit-user-container">
       <div className="edit-user">
         <Form onSubmit={this.handleSubmit}>
           <Form.Group> 
@@ -93,15 +94,6 @@ export default class extends Component {
               onChange={this.handleChange}
             />
           </Form.Group>
-
-          {/* <Form.Group> 
-            <Form.Control
-              type='textarea'  
-              name='skills'
-              value={this.props.skills}
-              onChange={this.props.handleChange}
-            />
-          </Form.Group> */}
 
           <Form.Group> 
           <Form.Label>Address:</Form.Label>
@@ -141,6 +133,7 @@ export default class extends Component {
           <button href="/profile" >Cancel</button> 
           </div>
         </Form>
+      </div>
       </div>
     );
   }

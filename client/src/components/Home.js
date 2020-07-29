@@ -1,19 +1,22 @@
-import React from 'react';
-//import Thread from '../../../models/Thread';
-import axios from 'axios';
-import ThreadList from './threads/ThreadList';
+import React from 'react'
+//import Thread from '../../../models/Thread'
+import axios from 'axios'
+import ThreadList from './threads/ThreadList'
 import Map from './Map'
 import Navbar from './Navbar'
+import { ABH } from '../utils/imageUpload'
 
 
 const Home = () => {
   return (
   <div className="homepage"> 
     <Navbar /> 
-    <h1 className="homepage-header">Temp header home</h1>
+    <div className="abh-container">
+    <img className="abh" src={ABH}/>
+    </div>
 
-    <img src='../public/images/layout.jpg'/>
-      
+
+    <h1 className="homepage-header"></h1>
     <div className="map-container">
       <div className="mapbox">
 
