@@ -27,6 +27,7 @@ class UserDetails extends Component {
         return <div>
           {/* <Navbar />  */}
           <h3>{this.state.user.name}</h3>
+          <p>{this.state.thread.picture}</p>
           <p>{this.state.thread.email}</p>
         </div>
     }

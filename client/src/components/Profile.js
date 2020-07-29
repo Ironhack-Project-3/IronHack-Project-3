@@ -11,6 +11,7 @@ export default class Profile extends React.Component {
     editUser: false,
     error: null,
     name: "",
+    picture: "",
     email: "",
     age: null,
     address: "",
@@ -39,6 +40,7 @@ export default class Profile extends React.Component {
     axios
       .put(`/user:id`, {
         name: this.state.name,
+        picture: this.state.picture,
         email: this.state.email,
         age: this.state.age,
         address: this.state.address,
@@ -50,6 +52,7 @@ export default class Profile extends React.Component {
           user: response.data,
           username: response.data.username,
           name: response.data.name,
+          picture: response.data.picture,
           email: response.data.email,
           age: response.data.age,
           address: response.data.address,
@@ -80,9 +83,10 @@ export default class Profile extends React.Component {
           user: response.data,
           username: response.data.username,
           name: response.data.name,
+          picture: response.data.picture,
           email: response.data.email,
           age: response.data.age,
-          skilss: response.data.skills,
+          skills: response.data.skills,
           address: response.data.address,
           bio: response.data.bio,
         });
@@ -103,6 +107,7 @@ export default class Profile extends React.Component {
 
 
   render() {
+    console.log(this.props.user);
     return (
       <>
         <Navbar user={this.state.user} setUser={this.setUser} />
@@ -112,6 +117,7 @@ export default class Profile extends React.Component {
             <ul>
               <h1>Welcome to your profile, {this.props.user.username}!</h1>
               <li>Username: {this.props.user.username}</li>
+              <li>Picture: {this.props.user.picture}</li>
               <li>Email: {this.props.user.email}</li>
               <li>Name: {this.props.user.name}</li>
               <li>Age: {this.props.user.age}</li>

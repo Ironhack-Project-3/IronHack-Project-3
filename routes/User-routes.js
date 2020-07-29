@@ -118,6 +118,7 @@ router.post('/user/:id', (req, res, next)=>{
   User.create({
     user: req.body.userID,
       name: req.body.name,
+      picture: req.body.picture,
       email: req.body.email, 
       age: req.body.age,
       address: req.body.address,
