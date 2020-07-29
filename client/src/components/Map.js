@@ -19,8 +19,7 @@ const Map = () => {
     longitude: 13.4050,
     width: "50vw",
     height: "50vh",
-    zoom: 12
-    // <div id="map" style = 'width: 100%; height: 500px;' ></div>
+    zoom: 10
   });
   
   let addressInfo = []
@@ -34,11 +33,11 @@ const Map = () => {
     axios.get(`/api/users`)
     .then(responseFromApi => {
         let coordinates = responseFromApi.data.map(user=>{
-          console.log(user)
+          // console.log(user)
           return convertAddress(user.address)
         })
         Promise.all(coordinates).then(cords=>{
-          console.log(cords)
+          // console.log(cords)
           setAddress(cords)
         })
     })
@@ -49,8 +48,8 @@ const Map = () => {
   }, [])
 
 
-  useEffect(()=>{
-console.log(address,"recognize me")
+  useEffect(() => {
+    // console.log(address,"recognize me")
   },[address])
 
   useEffect(() => { 
@@ -77,30 +76,16 @@ console.log(address,"recognize me")
         }}
       >
 
-{address.map(location => {
-  console.log(location)
-               return  <Marker 
-                  key={location._id}
-                  longitude={ location[0] }
-                  latitude={ location[1] }
-                  >
-                   <Pin size={5} />
-
-                   {/* <button class="marker-btn">
-                    <img src = { sunset.img } alt="sunset icon" />
-                   </button> */}
-                   
-                   {/* <Link to={`/spotdetails/${sunset._id}`}>
-                   <img className="marker-btn-img" src = { sunset.img } alt="sunset icon" />
-                  </Link> */}
-                </Marker>
-}
-
-            )}
-
-
+  {address.map(location => {
+    {/* console.log(location) */}
+      return  <Marker 
+        key={location._id}
+        longitude={ location[0] }
+        latitude={ location[1] }
+        >
+        <Pin size={5} />
+        </Marker>})}
       </ReactMapGL>
-
     </div>
   );}
 

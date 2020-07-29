@@ -8,7 +8,7 @@ export default class extends Component {
   render() {
  
 
-console.log("hello");
+// console.log("hello");
     return (
       <div className="edit-user">
         <Form onSubmit={this.props.handleSubmit}>
