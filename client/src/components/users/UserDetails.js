@@ -12,7 +12,7 @@ class UserDetails extends Component {
   componentDidMount = () => {
      axios.get("/api/users/" + this.props.match.params.id)
     .then(userObject => {
-      console.log(userObject)
+      // console.log(userObject)
       this.setState({
         user: userObject.data
       }) 

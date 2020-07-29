@@ -32,6 +32,7 @@ const Map = () => {
     return convertAddress(elem);
   });
 
+
   const getAllAddress = () => {
     axios.get(`/api/users`).then((responseFromApi) => {
       let coordinates = responseFromApi.data.map((user) => {
@@ -50,7 +51,7 @@ const Map = () => {
   }, []);
 
   useEffect(() => {
-    console.log(address, "recognize me");
+
   }, [address]);
 
   useEffect(() => {
@@ -86,6 +87,7 @@ const Map = () => {
             </Marker>
           );
         })}
+
       </ReactMapGL>
     </div>
   );
