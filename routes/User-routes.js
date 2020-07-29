@@ -16,9 +16,11 @@ router.post("/users/new", (req, res, next) => {
     // },
     needs: [],
     skills: [],
+
     needs: [["speaking"], ["writing"], ["walking"]],
 
     skills: [["speaking"], ["writing"], ["walking"]],
+
     address: req.body.address,
     age: req.body.age,
     picture: req.body.picture,
@@ -115,11 +117,14 @@ router.get("/users/:id", (req, res) => {
 router.post("/user/:id", (req, res, next) => {
   User.create({
     user: req.body.userID,
-    name: req.body.name,
-    email: req.body.email,
-    age: req.body.age,
-    address: req.body.address,
-    bio: req.body.bio,
+
+      name: req.body.name,
+      picture: req.body.picture,
+      email: req.body.email, 
+      age: req.body.age,
+      address: req.body.address,
+      bio: req.body.bio,    
+
   })
     .then((response) => {
       User.findByIdAndUpdate(req.body.userID, { $push: { user: response._id } })

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import AddUser from './AddUser'; // <== !!!
+import AddUser from './AddUser';
 
 class UserList extends Component {
   constructor(){

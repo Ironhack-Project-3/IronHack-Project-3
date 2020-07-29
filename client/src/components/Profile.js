@@ -10,6 +10,7 @@ export default class Profile extends React.Component {
     editUser: false,
     error: null,
     name: "",
+    picture: "",
     email: "",
     age: null,
     address: "",
@@ -21,6 +22,7 @@ export default class Profile extends React.Component {
       user: user,
     });
   };
+
 
   handleChange = (event) => {
     const { name, value } = event.target;
@@ -36,6 +38,7 @@ export default class Profile extends React.Component {
     axios
       .put(`/user:id`, {
         name: this.state.name,
+        picture: this.state.picture,
         email: this.state.email,
         age: this.state.age,
         address: this.state.address,
@@ -44,9 +47,8 @@ export default class Profile extends React.Component {
       })
       .then((response) => {
         this.setState({
-          user: response.data,
-          username: response.data.username,
           name: response.data.name,
+          picture: response.data.picture,
           email: response.data.email,
           age: response.data.age,
           address: response.data.address,
@@ -76,11 +78,11 @@ export default class Profile extends React.Component {
         console.log(response.data);
         this.setState({
           user: response.data,
-          username: response.data.username,
           name: response.data.name,
+          picture: response.data.picture,
           email: response.data.email,
           age: response.data.age,
-          skilss: response.data.skills,
+          skills: response.data.skills,
           address: response.data.address,
           bio: response.data.bio,
         });
@@ -93,6 +95,7 @@ export default class Profile extends React.Component {
         }
       });
   };
+
 
   componentDidMount() {
     if (this.props.match.params.id) {
@@ -115,6 +118,7 @@ export default class Profile extends React.Component {
   render() {
     console.log(this.props.user);
     if (!this.state.user) return <div>Loading..</div>;
+
     return (
       <>
         <Navbar user={this.state.user} setUser={this.setUser} />
@@ -122,6 +126,7 @@ export default class Profile extends React.Component {
         <div className="profile-page">
           <div className="profile-info">
             <ul>
+/////////
               <h1>Welcome to your profile, {this.state.user.username}!</h1>
               <li>Username: {this.state.user.username}</li>
               <li>Email: {this.state.user.email}</li>
@@ -135,6 +140,24 @@ export default class Profile extends React.Component {
                 ))}
               </li>
               <li>Bio: {this.state.user.bio}</li>
+/////////
+              <h1>Welcome to your profile, {this.props.user.username}!</h1>
+            <li><strong>Username:</strong> {this.props.user.username}</li>
+              <li><strong>Email: </strong>{this.props.user.email}</li>
+              <li><strong>Name: </strong>{this.props.user.name}</li>
+              <li><strong>Age: </strong>{this.props.user.age}</li>
+              <li><strong>Address: </strong>{this.props.user.address}</li>
+ 
+              <li>
+              <strong> Skills:</strong>{" "}
+                {this.props.user.skills.map(el => (
+                  <>              
+                  <li>{el}</li>                     
+                  </>
+                ))}
+              </li>
+              <li><strong>Bio: </strong>{this.props.user.bio}</li>
+//////////
             </ul>
             <div className="user-details-edit-delete-buttons">
               <button onClick={this.toggleEditUser}>Edit User</button>
