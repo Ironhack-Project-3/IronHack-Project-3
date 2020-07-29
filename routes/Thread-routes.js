@@ -4,7 +4,6 @@ const router = express.Router();
 const Thread = require("../models/Thread");
 const User = require("../models/User");
 
-// ----------------------------?????????--------------------------
 router.post("/", (req, res) => {
   const title = req.body.title;
   const description = req.body.description;
