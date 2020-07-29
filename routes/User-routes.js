@@ -21,6 +21,7 @@ router.post('/users/new', (req, res, next)=>{
     needs: [['speaking'], ['writing'], ['walking']],
    
     skills: [['speaking'], ['writing'], ['walking']],
+    address: req.body.address,
     age: req.body.age,
     picture: req.body.picture,
     bio: req.body.bio,
@@ -113,10 +114,14 @@ router.get('/users/:id', (req, res) => {
 
 //////////////////////////////////////////////////
  
-router.post('/user:id', (req, res, next)=>{ 
-  Thread.create({
+router.post('/user/:id', (req, res, next)=>{ 
+  User.create({
+    user: req.body.userID,
       name: req.body.name,
-      email: req.body.email,   
+      email: req.body.email, 
+      age: req.body.age,
+      address: req.body.address,
+      bio: req.body.bio,    
   })
     .then(response => { 
         User.findByIdAndUpdate(req.body.userID, { $push:{ user: response._id } })
@@ -132,7 +137,7 @@ router.post('/user:id', (req, res, next)=>{
     })
 })
 
-router.put('/user:id', (req, res, next)=>{
+router.put('/user/:id', (req, res, next)=>{
  
   if(!mongoose.Types.ObjectId.isValid(req.params.id)) {
     res.status(400).json({ message: 'Specified id is not valid' });

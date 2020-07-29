@@ -15,7 +15,6 @@ import AddThread from './components/threads/AddThread';
 import ThreadList from './components/threads/ThreadList';
 import ThreadDetails from './components/threads/ThreadDetails'
 
-
 class App extends React.Component {
 
   state = {
@@ -27,16 +26,16 @@ class App extends React.Component {
     })
   }
 
-  render() {
-    console.log("app user", this.state.user)
+  render() { 
+
   return(
     <div className="app">
 
           {/* <Switch> */}
             <Route exact path="/" component={Welcome}/>
-            <Route exact path="/Signup" render={props => <Signup setUser={this.setUser} {...props} />} />
-            <Route exact path='/Login' render={(props) => <Login setUser={this.setUser} {...props}/>} />
-            <Route exact path="/Home" render={() => <Home />} />
+            <Route exact path="/signup" render={props => <Signup setUser={this.setUser} {...props} />} />
+            <Route exact path='/login' render={(props) => <Login setUser={this.setUser} {...props}/>} />
+            <Route exact path="/home" render={() => <Home />} />
             {/* <Route exact path="/profile" render={() => this.state.user ? <Profile /> : <Redirect to='/' />}/> */}
             <Route exact path="/users" component={UserList}/>
             <Route exact path="/profile" render={(props) => <Profile user={this.state.user} setUser={this.setUser} {...props} />} />
@@ -50,6 +49,4 @@ class App extends React.Component {
 }
 }
 
-
 export default App;
- 
