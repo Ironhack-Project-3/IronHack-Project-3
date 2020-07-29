@@ -49,7 +49,6 @@ const Map = () => {
 
 
   useEffect(() => {
-    // console.log(address,"recognize me")
   },[address])
 
   useEffect(() => { 
@@ -77,7 +76,6 @@ const Map = () => {
       >
 
   {address.map(location => {
-    {/* console.log(location) */}
       return  <Marker 
         key={location._id}
         longitude={ location[0] }

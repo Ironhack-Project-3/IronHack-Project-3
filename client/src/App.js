@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
@@ -18,6 +19,7 @@ import ThreadDetails from "./components/threads/ThreadDetails";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ThreadBoard from "./components/threads/ThreadBoard";
 
+
 class App extends React.Component {
   state = {
     user: this.props.user,
@@ -27,6 +29,7 @@ class App extends React.Component {
       user: user,
     });
   };
+
 
   render() {
     // console.log("app user", this.state.user)
@@ -71,5 +74,7 @@ class App extends React.Component {
     );
   }
 }
+
+
 
 export default App;
