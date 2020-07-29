@@ -7,7 +7,6 @@ import axios from 'axios';
 
 export default class extends Component {
 
-
   state = { 
     username: this.props.user.username,
     name: this.props.user.name,
@@ -60,7 +59,7 @@ export default class extends Component {
   };
 
   render() { 
- 
+
     return (
       <div className="edit-user-container">
       <div className="edit-user">

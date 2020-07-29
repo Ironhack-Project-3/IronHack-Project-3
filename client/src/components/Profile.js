@@ -5,11 +5,13 @@ import Navbar from "./Navbar";
 import EditUser from "./users/EditUser";
 
 export default class Profile extends React.Component {
+
   state = {
     user: this.props.user,
     editUser: false,
     error: null,
     name: "",
+    picture: "",
     email: "",
     age: null,
     address: "",
@@ -20,8 +22,7 @@ export default class Profile extends React.Component {
     this.setState({
       user: user,
     });
-  };
- 
+  }; 
 
   handleChange = (event) => {
     const { name, value } = event.target;
@@ -37,6 +38,7 @@ export default class Profile extends React.Component {
     axios
       .put(`/user:id`, {
         name: this.state.name,
+        picture: this.state.picture,
         email: this.state.email,
         age: this.state.age,
         address: this.state.address,
@@ -46,6 +48,7 @@ export default class Profile extends React.Component {
       .then((response) => {
         this.setState({
           name: response.data.name,
+          picture: response.data.picture,
           email: response.data.email,
           age: response.data.age,
           address: response.data.address,
@@ -75,6 +78,7 @@ export default class Profile extends React.Component {
         this.setState({
           user: response.data,
           name: response.data.name,
+          picture: response.data.picture,
           email: response.data.email,
           age: response.data.age,
           skills: response.data.skills,
@@ -96,7 +100,11 @@ export default class Profile extends React.Component {
   };
  
 
-  render() { 
+ 
+
+  render() {
+    console.log(this.props.user);
+ 
     return (
       <>
         <Navbar user={this.state.user} setUser={this.setUser} />
@@ -105,11 +113,12 @@ export default class Profile extends React.Component {
           <div className="profile-info">
             <ul>
               <h1>Welcome to your profile, {this.props.user.username}!</h1>
-              <li><strong>Username:</strong> {this.props.user.username}</li>
+            <li><strong>Username:</strong> {this.props.user.username}</li>
               <li><strong>Email: </strong>{this.props.user.email}</li>
               <li><strong>Name: </strong>{this.props.user.name}</li>
               <li><strong>Age: </strong>{this.props.user.age}</li>
               <li><strong>Address: </strong>{this.props.user.address}</li>
+ 
               <li>
               <strong> Skills:</strong>{" "}
                 {this.props.user.skills.map(el => (
@@ -141,3 +150,4 @@ export default class Profile extends React.Component {
     );
   }
 }
+

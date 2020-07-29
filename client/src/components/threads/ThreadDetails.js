@@ -20,7 +20,7 @@ class ThreadDetails extends Component {
   componentDidMount = () => {
     axios.get("/api/threads/" + this.props.match.params.id)
       .then(threadObject => {
-        console.log(threadObject)
+        // console.log(threadObject)
         this.setState({
           thread: threadObject.data
         })

@@ -11,7 +11,7 @@ class AddUser extends Component {
     event.preventDefault();
     const name = this.state.name;
     const email = this.state.email;
-    console.log("HERE", name, email)
+    // console.log("HERE", name, email)
     axios.post("/api/users/new", { name, email })
     .then( (newUser) => {
 
