@@ -3,13 +3,14 @@ import React from 'react';
 import axios from 'axios';
 import ThreadList from './threads/ThreadList';
 import Map from './Map'
-import Navbar from './Navbar'
+import  Card from './Navbar'
 
 
 const Home = () => {
   return (
   <div className="homepage"> 
-    <Navbar /> 
+    {/* <Navbar />  */}
+    <Card />
     <h1 className="homepage-header">Temp header home</h1>
 
     <img src='../public/images/layout.jpg'/>
