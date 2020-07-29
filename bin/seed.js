@@ -21,7 +21,7 @@ const Users = [
     skills: ["speaking"],
     age: 25,
     address: "Kreuzbergstrasse 48, 10965 Berlin Deutschland",
-    picture: "https://i.imgur.com/WvWyXBF.jpg",
+    picture: "https://i.imgur.com/1IcdnSv.jpg",
     bio: "I'm Hans!",
     reviews: [
       {
@@ -40,7 +40,7 @@ const Users = [
     skills: ["speaking"],
     age: 24,
     address: "Kreuzbergstrasse 40, 10965 Berlin Deutschland",
-    picture: "https://i.imgur.com/WvWyXBF.jpg",
+    picture: "https://i.imgur.com/1IcdnSv.jpg",
     bio: "I'm Greta!",
     reviews: [
       {
@@ -58,7 +58,7 @@ const Users = [
     needs: ["speaking"],
     age: 28,
     address: "Reichenbergerstr. 10999 Berlin",
-    picture: "https://imgur.com/gallery/8O6UPog",
+    picture: "https://i.imgur.com/1IcdnSv.jpg",
     bio: "hi, I’m Rachel! I just moved berlin to work in a new job in coding. I’m looking for someone to help me getting started with all the paperwork and German bureaucracy. ",
     reviews: [
       {
@@ -76,7 +76,7 @@ const Users = [
     needs: [['speaking'], ['writing'], ['walking']],
     age: 21,
     address: " Adalbertstraße 9, 10999 Berlin",
-    picture: "https://upload.wikimedia.org/wikipedia/commons/2/29/Natasha_Alam_2009.jpg",
+    picture: "https://i.imgur.com/1IcdnSv.jpg",
     bio: "I moved to Berlin because I thought Octoberfest was here. But it was in Munich. Fuck. I'm already stuck here and I have to do bureucracy and I just can't.",
   },
   {
@@ -88,7 +88,7 @@ const Users = [
     skills: [['speaking'], ['writing'], ['walking']],
     age: 44,
     address: "Badenallee 5 14052 Berlin Deutschland",
-    picture: "https://photos.travelblog.org/Photos/23899/97713/f/637117-Drunk-old-German-guy-0.jpg",
+    picture: "https://i.imgur.com/1IcdnSv.jpg",
     bio: "I moved to Germany 10 years ago. I went from zero to hero in just 2 years! I rocked German bureucracy and breathed paperwork. I will translate stuff for you and also go to any places with you, because I'm such an an excellent communicator. Payment with €€ or if you are pretty we will see what we can do",
     reviews: [
       {
@@ -106,7 +106,7 @@ const Users = [
     skills: ["speaking"],
     age: 25,
     address: "Kreuzbergstrasse 28, 10965 Berlin Deutschland",
-    picture: "https://i.imgur.com/WvWyXBF.jpg",
+    picture: "https://i.imgur.com/1IcdnSv.jpg",
     bio: "I'm Georges!",
     reviews: [{
       user: "Georges",
@@ -122,7 +122,7 @@ const Users = [
     skills: ["writing"],
     age: 24,
     address: "Kreuzbergstrasse 10, 10965 Berlin Deutschland",
-    picture: "https://i.imgur.com/WvWyXBF.jpg",
+    picture: "https://i.imgur.com/1IcdnSv.jpg",
     bio: "I'm Georgette!",
     reviews: [{
       user: "Georgette",

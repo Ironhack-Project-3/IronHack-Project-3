@@ -22,7 +22,6 @@ export default class Card extends Component {
   };
 
   menuInteraction = () => {
-    console.log("RAN");
     this.setState({ showMenu: !this.state.showMenu });
   };
 

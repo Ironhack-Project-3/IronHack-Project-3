@@ -14,6 +14,7 @@ export default class Signup extends Component {
   state = {
     username: "",
     password: "",
+    picture: "",
     name: "",
     email: "",
     age: null,
@@ -51,6 +52,7 @@ export default class Signup extends Component {
       username,
       password,
       name,
+      picture,
       email,
       age,
       address,
@@ -64,31 +66,39 @@ export default class Signup extends Component {
 
     const skills = [tandem, walk, call, write, hang].filter((el) => el);
     // console.log(skills);
-
-    signup(username, password, name, email, age, address, skills, bio).then(
-      (data) => {
-        if (data.message) {
-          this.setState({
-            message: data.message,
-            username: "",
-            password: "",
-            age: null,
-            name: "",
-            email: "",
-            address: "",
-            skills: [],
-            bio: "",
-          });
-        } else {
-          this.props.setUser(data);
-          this.props.history.push("/Home");
-        }
+    console.log(picture, "This is the picture");
+    signup(
+      username,
+      password,
+      name,
+      email,
+      age,
+      address,
+      skills,
+      bio,
+      picture
+    ).then((data) => {
+      if (data.message) {
+        this.setState({
+          message: data.message,
+          username: "",
+          password: "",
+          picture: "",
+          age: null,
+          name: "",
+          email: "",
+          address: "",
+          skills: [],
+          bio: "",
+        });
+      } else {
+        this.props.setUser(data);
+        this.props.history.push("/Home");
       }
-    );
+    });
   };
 
   render() {
-    console.log(this.state);
     return (
       <>
         <div className="signup-page">
@@ -142,6 +152,17 @@ export default class Signup extends Component {
                   value={this.state.name}
                   onChange={this.handleChange}
                   id="name"
+                />
+              </Form.Group>
+
+              <Form.Group>
+                <Form.Label htmlFor="picture">Picture: </Form.Label>
+                <Form.Control
+                  type="picture"
+                  name="picture"
+                  value={this.state.picture}
+                  onChange={this.handleChange}
+                  id="picture"
                 />
               </Form.Group>
 
