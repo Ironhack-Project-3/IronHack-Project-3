@@ -24,18 +24,16 @@ const userSchema = new Schema({
   },
   role: {
     type: String,
-    enum: ['user', 'provider'],
+    enum: ['user', 'provider'], 
 
   }, 
-
   needs: [['write'], ['walk'], ['call'], ['tandem'], ['hang']],
   skills: [['write'], ['walk'], ['call'], ['tandem'], ['hang']],
-
-
   age: Number,
   address: {
     type: String,
     default: "Berlin"
+
   },
   picture: String,
   bio: String,

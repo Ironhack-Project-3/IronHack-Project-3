@@ -23,8 +23,6 @@ export default class Profile extends React.Component {
     });
   };
 
-  /////////////////////////////////////////
-
   handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -103,10 +101,8 @@ export default class Profile extends React.Component {
     this.getData();
   };
 
-  ///////////////////////////////////////////////////
-
   render() {
-    console.log(this.props.user);
+    console.log(this.props.user, "profile user");
     return (
       <>
         <Navbar user={this.state.user} setUser={this.setUser} />

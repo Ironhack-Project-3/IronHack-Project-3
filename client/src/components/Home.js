@@ -6,7 +6,8 @@ import Map from './Map'
 import  Card from './Navbar'
 
 
-const Home = () => {
+const Home = (props) => {
+  // console.log("these are the home prosp", props)
   return (
   <div className="homepage"> 
     {/* <Navbar />  */}
@@ -22,7 +23,7 @@ const Home = () => {
       </div>
     </div>
       <div className="homepage-threads">
-            <ThreadList/>
+            <ThreadList user={props.user}/>
       </div>
       </div>
   )

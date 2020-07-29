@@ -12,11 +12,12 @@ class AddThread extends Component {
     event.preventDefault();
     const title = this.state.title;
     const description = this.state.description;
-    const user = this.state.user;
+    const user = this.props.user.username;
     axios.post("/api/threads", { title, description, user })
     .then( () => {
          this.props.getData();
-         this.setState({title: "", description: "" , user:""});
+         this.setState({title: "", description: "" , user: this.props.user.username});
+        //  console.log("post axios state", this.state)
     })
     .catch( error => console.log(error) )
   }
@@ -27,10 +28,9 @@ class AddThread extends Component {
   }
  
   render(){
-    console.log("out ofthe props", this.props)
+    console.log("out of the props", this.props.user.username)
    
     return(
-
       <div>
 
         <form className="thread-form" onSubmit={this.handleFormSubmit}>
