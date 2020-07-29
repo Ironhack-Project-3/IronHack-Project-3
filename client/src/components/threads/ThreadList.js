@@ -55,8 +55,10 @@ class ThreadList extends Component {
             <div className="threadlist-results">
               {this.state.listOfThreads.map((thread) => {
                 let name = "";
+                let id = "";
 
                 thread.user ? (name = thread.user.username) : (name = "");
+                thread.user ? (id = thread.user._id) : (id = "");
 
                 {
                   /* let tests = this.state.listOfUsers.find(
@@ -78,9 +80,12 @@ class ThreadList extends Component {
                     <Link to={`/threads/${thread._id}`}>
                       <h3>{thread.title}</h3>
                     </Link>
-                    <Link to={`/profile/${thread.user}`}>
+
+
+                    <Link to={`/profile/${id}`}>
                       <h5>{name}</h5>
                     </Link>
+                    <p>{thread.description} </p>
 
                     <div className="threadlist-buttons">
                       <Link to={`/threads/${thread._id}`}>
