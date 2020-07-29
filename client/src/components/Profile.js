@@ -46,8 +46,6 @@ export default class Profile extends React.Component {
       })
       .then((response) => {
         this.setState({
-          user: response.data,
-          username: response.data.username,
           name: response.data.name,
           picture: response.data.picture,
           email: response.data.email,
@@ -72,13 +70,13 @@ export default class Profile extends React.Component {
 
   getData = () => {
     const id = this.props.match.params.id;
+    console.log(id, "ID");
     axios
-      .get(`/api/user/${id}`)
+      .get(`/api/users/${id}`)
       .then((response) => {
         console.log(response.data);
         this.setState({
           user: response.data,
-          username: response.data.username,
           name: response.data.name,
           picture: response.data.picture,
           email: response.data.email,
@@ -89,7 +87,7 @@ export default class Profile extends React.Component {
         });
       })
       .catch((err) => {
-        console.log(err.response);
+        console.log(err);
         // handle err.response depending on err.response.status
         if (err.response.status === 404) {
           this.setState({ error: "Not found" });
@@ -97,12 +95,11 @@ export default class Profile extends React.Component {
       });
   };
 
-  componentDidMount = () => {
-    this.getData();
-  };
+
 
   render() {
     console.log(this.props.user, "profile user");
+
     return (
       <>
         <Navbar user={this.state.user} setUser={this.setUser} />
@@ -110,20 +107,38 @@ export default class Profile extends React.Component {
         <div className="profile-page">
           <div className="profile-info">
             <ul>
-              <h1>Welcome to your profile, {this.props.user.username}!</h1>
-              <li>Username: {this.props.user.username}</li>
-              <li>Picture: {this.props.user.picture}</li>
-              <li>Email: {this.props.user.email}</li>
-              <li>Name: {this.props.user.name}</li>
-              <li>Age: {this.props.user.age}</li>
-              <li>Address: {this.props.user.address}</li>
+/////////
+              <h1>Welcome to your profile, {this.state.user.username}!</h1>
+              <li>Username: {this.state.user.username}</li>
+              <li>Email: {this.state.user.email}</li>
+              <li>Name: {this.state.user.name}</li>
+              <li>Age: {this.state.user.age}</li>
+              <li>Address: {this.state.user.address}</li>
               <li>
                 Skills:{" "}
-                {this.props.user.skills.map((el) => (
+                {this.state.user.skills.map((el) => (
                   <p>{el}</p>
                 ))}
               </li>
-              <li>Bio: {this.props.user.bio}</li>
+              <li>Bio: {this.state.user.bio}</li>
+/////////
+              <h1>Welcome to your profile, {this.props.user.username}!</h1>
+            <li><strong>Username:</strong> {this.props.user.username}</li>
+              <li><strong>Email: </strong>{this.props.user.email}</li>
+              <li><strong>Name: </strong>{this.props.user.name}</li>
+              <li><strong>Age: </strong>{this.props.user.age}</li>
+              <li><strong>Address: </strong>{this.props.user.address}</li>
+ 
+              <li>
+              <strong> Skills:</strong>{" "}
+                {this.props.user.skills.map(el => (
+                  <>              
+                  <li>{el}</li>                     
+                  </>
+                ))}
+              </li>
+              <li><strong>Bio: </strong>{this.props.user.bio}</li>
+//////////
             </ul>
             <div className="user-details-edit-delete-buttons">
               <button onClick={this.toggleEditUser}>Edit User</button>

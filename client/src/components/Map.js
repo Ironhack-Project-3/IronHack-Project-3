@@ -19,11 +19,12 @@ const convertAddress = (address) => {
 const Map = () => {
   const [address, setAddress] = useState([]);
   const [viewport, setViewport] = useState({
-    latitude: 52.52,
-    longitude: 13.405,
-    width: "50vw",
-    height: "50vh",
-    zoom: 10,
+ 
+    latitude: 52.5200,
+    longitude: 13.4050,
+    width: "180vh",
+    height: "100vh",
+    zoom: 10 
   });
 
   let addressInfo = [];
@@ -31,6 +32,7 @@ const Map = () => {
   let coordinates = addressInfo.map((elem) => {
     return convertAddress(elem);
   });
+
 
   const getAllAddress = () => {
     axios.get(`/api/users`).then((responseFromApi) => {
@@ -83,6 +85,7 @@ const Map = () => {
             </Marker>
           );
         })}
+
       </ReactMapGL>
     </div>
   );

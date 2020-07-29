@@ -19,7 +19,6 @@ import ThreadDetails from "./components/threads/ThreadDetails";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ThreadBoard from "./components/threads/ThreadBoard";
 
-
 class App extends React.Component {
   state = {
     user: this.props.user,
@@ -57,10 +56,12 @@ class App extends React.Component {
           <Route
             exact
             path="/profile"
+
           
             render={(props)=><Profile  setUser={this.setUser}
             user={this.state.user} {...props} ></Profile>}
           />
+
           <Route exact path="/users/:id" component={UserDetails} />
           <Route
             exact
@@ -74,7 +75,5 @@ class App extends React.Component {
     );
   }
 }
-
-
 
 export default App;
