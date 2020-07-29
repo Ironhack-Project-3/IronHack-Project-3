@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import EditUser from "./users/EditUser";
 
 export default class Profile extends React.Component {
+
   state = {
     user: this.props.user,
     editUser: false,
@@ -22,7 +23,7 @@ export default class Profile extends React.Component {
     });
   };
 
-  /////////////////////////////////////////
+
 
   handleChange = (event) => {
     const { name, value } = event.target;
@@ -99,7 +100,7 @@ export default class Profile extends React.Component {
     this.getData();
   };
 
-  ///////////////////////////////////////////////////
+
 
   render() {
     return (
@@ -144,3 +145,4 @@ export default class Profile extends React.Component {
     );
   }
 }
+

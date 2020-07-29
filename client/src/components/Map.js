@@ -33,11 +33,11 @@ const Map = () => {
     axios.get(`/api/users`)
     .then(responseFromApi => {
         let coordinates = responseFromApi.data.map(user=>{
-          console.log(user)
+          // console.log(user)
           return convertAddress(user.address)
         })
         Promise.all(coordinates).then(cords=>{
-          console.log(cords)
+          // console.log(cords)
           setAddress(cords)
         })
     })
@@ -49,7 +49,6 @@ const Map = () => {
 
 
   useEffect(() => {
-    console.log(address,"recognize me")
   },[address])
 
   useEffect(() => { 
@@ -74,11 +73,9 @@ const Map = () => {
         onViewportChange={viewport => {
           setViewport(viewport);
         }}
-      > 
+      >
 
-      
   {address.map(location => {
-    console.log(location)
       return  <Marker 
         key={location._id}
         longitude={ location[0] }
