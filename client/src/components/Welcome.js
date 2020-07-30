@@ -36,6 +36,4 @@ export default class Welcome extends Component {
   }
 }
 
-
-// picture bigger start hieeger 
-// tex ighter
+ 
