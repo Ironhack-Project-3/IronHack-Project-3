@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import AddThread from "./AddThread";
 import Profile from "../Profile";
+import {people} from "../../utils/imageUpload"
 
 class ThreadList extends Component {
   constructor(props) {
@@ -43,9 +44,10 @@ class ThreadList extends Component {
         {/* <Navbar /> */}
         <div className="threads">
           <div className="threadlist">
-            <div className="add-thread">
+            <div className="add-thread"> 
+            <img src={people} className="people-icon"/> 
               <h2>Add a New Thread</h2>
-              <AddThread
+                <AddThread
                 getData={() => this.getAllThreads()}
                 user={this.props.user}
               />{" "}

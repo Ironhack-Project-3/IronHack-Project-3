@@ -103,12 +103,7 @@ export default class Signup extends Component {
     return (
       <>
         <div className="signup-page">
-          <div className="signup-text">
-            <p>This is required to sign up</p>
-            <p>
-              Tell us more about yourself, including your skills and location{" "}
-            </p>
-          </div>
+          
           <div className="signup-form">
             <h2>Sign up</h2>
 
@@ -121,7 +116,7 @@ export default class Signup extends Component {
                   value={this.state.username}
                   onChange={this.handleChange}
                   id="username"
-                  placeholder="Username: "
+                  placeholder="*Username: "
                 />
               </Form.Group>
               <Form.Group>
@@ -132,7 +127,7 @@ export default class Signup extends Component {
                   value={this.state.password}
                   onChange={this.handleChange}
                   id="password"
-                  placeholder="Password: "
+                  placeholder="*Password: "
                 />
               </Form.Group>
 
@@ -144,7 +139,7 @@ export default class Signup extends Component {
                   value={this.state.email}
                   onChange={this.handleChange}
                   id="email"
-                  placeholder="Email: "
+                  placeholder="*Email: "
                 />
               </Form.Group>
 
@@ -183,7 +178,7 @@ export default class Signup extends Component {
                   onChange={this.handleChange}
                   id="address"
 
-                  placeholder="Address: "
+                  placeholder="*Address: "
                 />
               </Form.Group>
 

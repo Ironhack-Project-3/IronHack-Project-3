@@ -21,6 +21,7 @@ const userSchema = new Schema({
   },
   email: {
     type: String,
+    required: true,
   },
   role: {
     type: String,
@@ -32,8 +33,8 @@ const userSchema = new Schema({
   age: Number,
   address: {
     type: String,
-    default: "Berlin"
-
+    default: "Berlin",
+    required: true,
   },
   picture: String,
   bio: String,

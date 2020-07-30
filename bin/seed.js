@@ -28,7 +28,7 @@ const Users = [
         comments: "I'm Hans' review"
       }
     ],
-    thread: ObjectID('5f2046ca5933fb5fbd18f731'),
+  //  thread: ObjectID('5f2046ca5933fb5fbd18f731'),
   },
 
   {
@@ -48,7 +48,7 @@ const Users = [
         comments: "I'm Greta's review"
       }
     ],
-    thread: ObjectID('5f2046ca5933fb5fbd18f732'),
+  //  thread: ObjectID('5f2046ca5933fb5fbd18f732'),
   },
   {
     username: "Rachel",
@@ -67,7 +67,7 @@ const Users = [
         comments: "I'm Rachel's review"
       }
     ],
-    thread: ObjectID('5f2046ca5933fb5fbd18f733'),
+  //  thread: ObjectID('5f2046ca5933fb5fbd18f733'),
   },
   {
     username: "natasha555",
@@ -80,7 +80,7 @@ const Users = [
     address: " Adalbertstraße 9, 10999 Berlin",
     picture: "https://i.imgur.com/1IcdnSv.jpg",
     bio: "I moved to Berlin because I thought Octoberfest was here. But it was in Munich. Fuck. I'm already stuck here and I have to do bureucracy and I just can't.",
-    thread: ObjectID('5f2046ca5933fb5fbd18f731'),
+   // thread: ObjectID('5f2046ca5933fb5fbd18f731'),
   },
   {
     username: "mario2839",
@@ -99,7 +99,7 @@ const Users = [
         comments: "I went to ABH with Mario and it's been the most life-changing experience of my life. It's been such an exciting adventure to travel through the bureaucratic jungle together."
       }
     ],
-    thread: ObjectID('5f2046ca5933fb5fbd18f731'),
+  //  thread: ObjectID('5f2046ca5933fb5fbd18f731'),
   },
   {
     username: "georges",
@@ -116,7 +116,7 @@ const Users = [
       user: "Georges",
       comments: "I'm Georges' review"
     }],
-    thread: ObjectID('5f2046ca5933fb5fbd18f734'),
+   // thread: ObjectID('5f2046ca5933fb5fbd18f734'),
   }, 
 
   {
@@ -134,7 +134,7 @@ const Users = [
       user: "Georgette",
       comments: "I'm Georgette review"
     }],
-    thread: ObjectID('5f2046ca5933fb5fbd18f731'),
+    //thread: ObjectID('5f2046ca5933fb5fbd18f731'),
   }
 ];
 
@@ -142,27 +142,27 @@ const Users = [
   {
     title: 'I will escort you to ABH and negotiate your flat contract',
     description: "I moved to Germany 10 years ago. I went from zero to hero in just 2 years! I rocked German bureucracy and breathed paperwork. I will translate stuff for you and also go to any places with you, because I'm such an an excellent communicator. Payment with €€ or if you are pretty we will see what we can do",
-    user: ObjectID('5f2046ca5933fb5fbd18f72b'),
+   // user: ObjectID('5f2046ca5933fb5fbd18f72b'),
   },
   {
     title: 'I need an escort for ABH',
     description: "I can't stand these people and they always hate me for some reason when I try to speak Russian to them, can someone please help me and come with me DO SOMETHING HALP",
-    user: ObjectID('5f2046ca5933fb5fbd18f726'),
+   // user: ObjectID('5f2046ca5933fb5fbd18f726'),
   },
   {
     title: "new in town",
     description: "Hi! I don’t speak German and I need some help doing my anmeldung at the Art. Its a 6:30 am so I am willing to pay 20 Euros to anyone that can help!",
-    user: ObjectID('5f2046ca5933fb5fbd18f728'),
+  //  user: ObjectID('5f2046ca5933fb5fbd18f728'),
   },
   {
     title: "George in the concrete jungle",
     description: "I know how to speak and read German, it's very fun. I want to meet you and help you! hourly rate is 25 EURO",
-    user: ObjectID('5f2046ca5933fb5fbd18f72a'),
+   // user: ObjectID('5f2046ca5933fb5fbd18f72a'),
   },
   {
     title: "I am just so cool and can literally solve any of your problem",
     description: "P.S. I really REALLY need the money",
-    user: ObjectID('5f2046ca5933fb5fbd18f724'),
+  //  user: ObjectID('5f2046ca5933fb5fbd18f724'),
   }
  ];
 

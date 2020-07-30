@@ -114,7 +114,7 @@ export default class Profile extends React.Component {
         <div className="profile-page">
           <div className="profile-info">
             <ul>
-              <h1>Welcome to your profile, {this.state.user.username}!</h1>
+              <h1>{this.state.user.username}'s profile</h1>
               <img src={this.state.user.picture} alt="Your face"></img>
               <li>Username: {this.state.user.username}</li>
               <li>Picture: {this.state.user.picture}</li>
