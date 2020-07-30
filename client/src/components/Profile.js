@@ -166,6 +166,6 @@ export default class Profile extends React.Component {
           </div>
         </div>
       </>
-    );
+    )
   }
 }

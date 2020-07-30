@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 import { login } from '../services/auth';
+import {bear} from '../utils/imageUpload'
 
 export default class Login extends Component {
   state = {
@@ -41,27 +42,30 @@ export default class Login extends Component {
     return (
       <>  
       <div className="login-page">
+
         <div className="login-form">
         <h2>Log In</h2>
-        <Form onSubmit={this.handleSubmit}>
+        <Form onSubmit={this.handleSubmit} className="login-form-form">
           <Form.Group>
-            <Form.Label htmlFor='username'>Username: </Form.Label>
+            <Form.Label htmlFor='username'></Form.Label>
             <Form.Control
               type='text'
               name='username'
               value={this.state.username}
               onChange={this.handleChange}
               id='username'
+              placeholder="Username"
             />
           </Form.Group>
           <Form.Group>
-            <Form.Label htmlFor='password'>Password: </Form.Label>
+            <Form.Label htmlFor='password'></Form.Label>
             <Form.Control
               type='password'
               name='password'
               value={this.state.password}
               onChange={this.handleChange}
               id='password'
+              placeholder="Password"
             />
           </Form.Group>
           {this.state.message && (
@@ -73,6 +77,8 @@ export default class Login extends Component {
           </div>
         </Form>
         </div>
+
+      <img src={bear} className="bear-icon"/>
         </div>
       </>
     );
