@@ -119,7 +119,6 @@ class ThreadDetails extends Component {
             </div>
 
             <div className="thread-details-edit-delete-buttons">
-           
                 <button onClick={this.toggleEditForm}>Edit Thread</button>
                 <button onClick={this.deleteThread}>Delete Thread</button>
                 </div>
@@ -128,7 +127,6 @@ class ThreadDetails extends Component {
                   handleChange={this.handleChange}
                   handleSubmit={this.handleSubmit} />
                 )}
-          
         </div>
       </div>
       </>

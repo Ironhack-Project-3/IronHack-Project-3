@@ -129,25 +129,14 @@ export default class Profile extends React.Component {
                 ))}
               </li>
               <li>Bio: {this.state.user.bio}</li>
-              {/* /////////
-              <h1>Welcome to your profile, {this.props.user.username}!</h1>
-            <li><strong>Username:</strong> {this.props.user.username}</li>
-              <li><strong>Email: </strong>{this.props.user.email}</li>
-              <li><strong>Name: </strong>{this.props.user.name}</li>
-              <li><strong>Age: </strong>{this.props.user.age}</li>
-              <li><strong>Address: </strong>{this.props.user.address}</li>
-              <li>
-              <strong>Skills: </strong>{" "}
-                {this.props.user.skills.map(el => (
-                  <>              
-                  <li>{el}</li>                     
-                  </>
-                ))}
-              </li>
-              <li><strong>Bio: </strong>{this.props.user.bio}</li>
-
-////////// */}
+           
             </ul>
+<div>
+
+  
+  <button></button>
+</div>
+
             <div className="user-details-edit-delete-buttons">
               <button onClick={this.toggleEditUser}>Edit User</button>
             </div>

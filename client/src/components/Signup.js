@@ -125,7 +125,7 @@ export default class Signup extends Component {
                 />
               </Form.Group>
               <Form.Group>
-                <Form.Label htmlFor="password">Password: </Form.Label>
+                <Form.Label htmlFor="password"> </Form.Label>
                 <Form.Control
                   type="password"
                   name="password"
@@ -137,9 +137,9 @@ export default class Signup extends Component {
               </Form.Group>
 
               <Form.Group>
-                <Form.Label htmlFor="email">Email: </Form.Label>
+                <Form.Label htmlFor="email"> </Form.Label>
                 <Form.Control
-                  type="email"
+                  type="text"
                   name="email"
                   value={this.state.email}
                   onChange={this.handleChange}
@@ -149,9 +149,9 @@ export default class Signup extends Component {
               </Form.Group>
 
               <Form.Group>
-                <Form.Label htmlFor="name">Name: </Form.Label>
+                <Form.Label htmlFor="name"> </Form.Label>
                 <Form.Control
-                  type="name"
+                  type="text"
                   name="name"
                   value={this.state.name}
                   onChange={this.handleChange}
@@ -162,9 +162,9 @@ export default class Signup extends Component {
               </Form.Group>
 
               <Form.Group>
-                <Form.Label htmlFor="picture">Picture: </Form.Label>
+                <Form.Label htmlFor="picture">  </Form.Label>
                 <Form.Control
-                  type="picture"
+                  type="text"
                   name="picture"
                   value={this.state.picture}
                   onChange={this.handleChange}
@@ -175,9 +175,9 @@ export default class Signup extends Component {
               </Form.Group>
 
               <Form.Group>
-                <Form.Label htmlFor="address">Address: </Form.Label>
+                <Form.Label htmlFor="address"> </Form.Label>
                 <Form.Control
-                  type="address"
+                  type="text"
                   name="address"
                   value={this.state.address}
                   onChange={this.handleChange}
@@ -188,9 +188,9 @@ export default class Signup extends Component {
               </Form.Group>
 
               <Form.Group>
-                <Form.Label htmlFor="age">Age: </Form.Label>
+                <Form.Label htmlFor="age"> </Form.Label>
                 <Form.Control
-                  type="age"
+                  type="text"
                   name="age"
                   value={this.state.age}
                   onChange={this.handleChange}
@@ -220,60 +220,15 @@ export default class Signup extends Component {
                   placeholder="Skills: "
                       />
                     ))}
-                    {/* <Form.Check
-                      inline
-                      label="I can translate in writing"
-                      type="checkbox"
-                      value={this.state.skills}
-                      onChange={this.handleChangeChecked}
-                      id="write"
-                      name="write"
-                    />
-                    <Form.Check
-                      inline
-                      label="I can accompany to an Amt"
-                      type="checkbox"
-                      value={this.state.skills}
-                      onChange={this.handleChangeChecked}
-                      id="walk"
-                      name="walk"
-                      banana="Does this work?"
-                    />
-                    <Form.Check
-                      inline
-                      label="I can translate on a phone call"
-                      type="checkbox"
-                      value={this.state.skills}
-                      onChange={this.handleChangeChecked}
-                      id="call"
-                      name="call"
-                    />
-                    <Form.Check
-                      inline
-                      label="I can be a tandem partner"
-                      type="checkbox"
-                      value={this.state.skills}
-                      onChange={this.handleChangeChecked}
-                      id="tandem"
-                      name="tandem"
-                    />
-                    <Form.Check
-                      inline
-                      label="I'd like to hang out"
-                      type="checkbox"
-                      value={this.state.skills}
-                      onChange={this.handleChangeChecked}
-                      id="hang"
-                      name="hang"
-                    /> */}
+                     
                   </div>
                 ))}
               </Form>
 
               <Form.Group>
-                <Form.Label htmlFor="bio">Bio: </Form.Label>
+                <Form.Label htmlFor="bio"> </Form.Label>
                 <Form.Control
-                  type="bio"
+                  type="text"
                   name="bio"
                   value={this.state.bio}
                   onChange={this.handleChange}
