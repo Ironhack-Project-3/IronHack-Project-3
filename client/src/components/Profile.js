@@ -128,9 +128,8 @@ export default class Profile extends React.Component {
               <li><strong>Name: </strong>{this.props.user.name}</li>
               <li><strong>Age: </strong>{this.props.user.age}</li>
               <li><strong>Address: </strong>{this.props.user.address}</li>
- 
               <li>
-              <strong> Skills:</strong>{" "}
+              <strong>Skills: </strong>{" "}
                 {this.props.user.skills.map(el => (
                   <>              
                   <li>{el}</li>                     
@@ -138,7 +137,7 @@ export default class Profile extends React.Component {
                 ))}
               </li>
               <li><strong>Bio: </strong>{this.props.user.bio}</li>
-//////////
+ 
             </ul>
             <div className="user-details-edit-delete-buttons">
               <button onClick={this.toggleEditUser}>Edit User</button>

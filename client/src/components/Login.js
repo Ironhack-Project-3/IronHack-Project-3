@@ -41,8 +41,6 @@ export default class Login extends Component {
     return (
       <>  
       <div className="login-page">
-      
-
         <div className="login-form">
         <h2>Log In</h2>
         <Form onSubmit={this.handleSubmit}>

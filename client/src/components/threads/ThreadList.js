@@ -81,7 +81,7 @@ class ThreadList extends Component {
                       <h3>{thread.title}</h3>
                     </Link>
 
-                    <Link to={`/profile/${thread.user}`}>
+                    <Link to={`/profile/${id}`}>
                       <h5>{name}</h5>
                     </Link>
 
@@ -91,9 +91,6 @@ class ThreadList extends Component {
                     <div className="threadlist-buttons">
                       <Link to={`/threads/${thread._id}`}>
                         <p>Go to Post</p>
-                      </Link>
-                      <Link to={`/threads/${thread._id}`}>
-                        <p>Add to favourites</p>
                       </Link>
                     </div>
                   </div>

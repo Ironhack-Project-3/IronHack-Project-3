@@ -123,9 +123,6 @@ export default class extends Component {
               onChange={this.handleChange}
             />
           </Form.Group>
-
-
-     
           
       <div className="edit-user-buttons"> 
           <button type='submit'>Submit Changes</button>
