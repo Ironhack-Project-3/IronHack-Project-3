@@ -13,7 +13,7 @@ mongoose.connect(process.env.MONGODB_URI||`mongodb://localhost/Database`, {
 
 const Users = [
   {
-    username: "hans",
+    username: "Hans",
     password: "hanshans",
     name: "Hans",
     email: "hans@hans.com",
@@ -21,7 +21,7 @@ const Users = [
     skills: ["speaking"],
     age: 25,
     address: "Kreuzbergstrasse 48, 10965 Berlin Deutschland",
-    picture: "https://i.imgur.com/1IcdnSv.jpg",
+    picture: "https://i.imgur.com/UEXOucS.jpg",
     bio: "I'm Hans!",
     reviews: [
       {
@@ -32,7 +32,7 @@ const Users = [
   },
 
   {
-    username: "greta",
+    username: "Greta",
     password: "gretagreta",
     name: "Greta",
     email: "greta@greta.com",
@@ -40,7 +40,7 @@ const Users = [
     skills: ["speaking"],
     age: 24,
     address: "Kreuzbergstrasse 40, 10965 Berlin Deutschland",
-    picture: "https://i.imgur.com/1IcdnSv.jpg",
+    picture: "https://i.imgur.com/tLrKjkp.jpg",
     bio: "I'm Greta!",
     reviews: [
       {
@@ -58,7 +58,7 @@ const Users = [
     needs: ["speaking"],
     age: 28,
     address: "Reichenbergerstr. 10999 Berlin",
-    picture: "https://i.imgur.com/1IcdnSv.jpg",
+    picture: "https://i.imgur.com/EhSOuAD.jpg",
     bio: "hi, I’m Rachel! I just moved berlin to work in a new job in coding. I’m looking for someone to help me getting started with all the paperwork and German bureaucracy. ",
     reviews: [
       {
@@ -68,7 +68,7 @@ const Users = [
     ]
   },
   {
-    username: "natasha555",
+    username: "Natasha555",
     password: "natashaisawesome",
     name: "Natasha",
     email: "natasha@nat.com",
@@ -76,11 +76,11 @@ const Users = [
     needs: [['speaking'], ['writing'], ['walking']],
     age: 21,
     address: " Adalbertstraße 9, 10999 Berlin",
-    picture: "https://i.imgur.com/1IcdnSv.jpg",
+    picture: "https://i.imgur.com/5F7ZWPy.jpg",
     bio: "I moved to Berlin because I thought Octoberfest was here. But it was in Munich. Fuck. I'm already stuck here and I have to do bureucracy and I just can't.",
   },
   {
-    username: "mario2839",
+    username: "Mario2839",
     password: "marioisawesome",
     name: "Mario",
     email: "mario@hans.com",
@@ -88,7 +88,7 @@ const Users = [
     skills: [['speaking'], ['writing'], ['walking']],
     age: 44,
     address: "Badenallee 5 14052 Berlin Deutschland",
-    picture: "https://i.imgur.com/1IcdnSv.jpg",
+    picture: "https://i.imgur.com/IrfgGKA.jpg",
     bio: "I moved to Germany 10 years ago. I went from zero to hero in just 2 years! I rocked German bureucracy and breathed paperwork. I will translate stuff for you and also go to any places with you, because I'm such an an excellent communicator. Payment with €€ or if you are pretty we will see what we can do",
     reviews: [
       {
@@ -106,7 +106,7 @@ const Users = [
     skills: ["speaking"],
     age: 25,
     address: "Kreuzbergstrasse 28, 10965 Berlin Deutschland",
-    picture: "https://i.imgur.com/1IcdnSv.jpg",
+    picture: "https://i.imgur.com/DvaAsKE.jpg",
     bio: "I'm Georges!",
     reviews: [{
       user: "Georges",
@@ -114,7 +114,7 @@ const Users = [
     }]
   }, 
   {
-    username: "georgette",
+    username: "Georgette",
     password: "georgettegeorgette",
     name: "Georgette",
     email: "georgette@georgette.com",
