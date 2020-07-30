@@ -5,7 +5,10 @@ const router = express.Router();
 const User = require("../models/User");
 const Thread = require("../models/Thread");
 
-router.post("/users/new", (req, res, next) => {
+
+
+router.post('/users/new', (req, res, next)=>{
+
   // console.log('this is req.body', req.body)
   User.create({
     name: req.body.name,

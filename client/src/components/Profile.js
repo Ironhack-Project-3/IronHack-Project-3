@@ -23,7 +23,6 @@ export default class Profile extends React.Component {
     });
   };
 
-
   handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -97,27 +96,9 @@ export default class Profile extends React.Component {
   };
 
 
-  componentDidMount() {
-    if (this.props.match.params.id) {
-      this.getData();
-    } else {
-      this.setState({
-        user: this.props.user,
-      });
-    }
-  }
-
-  componentDidUpdate(prevProp) {
-    if (prevProp !== this.props) {
-      this.setState({
-        user: this.props.user,
-      });
-    }
-  }
 
   render() {
-    console.log(this.props.user);
-    if (!this.state.user) return <div>Loading..</div>;
+    console.log(this.props.user, "profile user");
 
     return (
       <>

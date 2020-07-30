@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
@@ -28,8 +29,9 @@ class App extends React.Component {
     });
   };
 
+
   render() {
-    // console.log("app user", this.state.user)
+     console.log("app user", this.state.user)
     return (
       <div className="app">
         <Switch>
@@ -54,17 +56,10 @@ class App extends React.Component {
           <Route
             exact
             path="/profile"
-            setUser={this.setUser}
-            user={this.state.user}
-            render={(props) => <Profile user={this.state.user} {...props} />}
-          />
 
-          <Route
-            exact
-            path="/profile/:id"
-            setUser={this.setUser}
-            user={this.state.user}
-            component={Profile}
+          
+            render={(props)=><Profile  setUser={this.setUser}
+            user={this.state.user} {...props} ></Profile>}
           />
 
           <Route exact path="/users/:id" component={UserDetails} />
