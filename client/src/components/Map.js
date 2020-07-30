@@ -2,7 +2,8 @@ import React, { useState, useEffect, Component } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import Pin from "./Pin";
 import axios from "axios";
-import mapboxgl from "mapbox-gl"
+import mapboxgl from "mapbox-gl";
+import tower from "../images/tinyTower-07.png";
 
 const convertAddress = (address) => {
   let token =
@@ -20,12 +21,11 @@ const convertAddress = (address) => {
 const Map = () => {
   const [address, setAddress] = useState([]);
   const [viewport, setViewport] = useState({
- 
-    latitude: 52.5200,
-    longitude: 13.4050,
+    latitude: 52.52,
+    longitude: 13.405,
     width: "200vh",
     height: "30vh",
-    zoom: 10 
+    zoom: 10,
   });
 
   let addressInfo = [];
@@ -33,7 +33,6 @@ const Map = () => {
   let coordinates = addressInfo.map((elem) => {
     return convertAddress(elem);
   });
-
 
   const getAllAddress = () => {
     axios.get(`/api/users`).then((responseFromApi) => {
@@ -50,8 +49,7 @@ const Map = () => {
     getAllAddress();
   }, []);
 
-  useEffect(() => {
-  }, [address]);
+  useEffect(() => {}, [address]);
 
   useEffect(() => {
     let info = address.data;
@@ -62,7 +60,6 @@ const Map = () => {
       });
     }
   }, [address]);
-   
 
   // var map = new mapboxgl.Map({
   //   container: 'map', // container id
@@ -70,7 +67,7 @@ const Map = () => {
   //   center: [-122.65, 45.52], // starting position
   //   zoom: 9 // starting zoom
   //   });
-     
+
   //   // disable map zoom when using scroll
   //   Map.scrollZoom.disable();
 
@@ -79,29 +76,27 @@ const Map = () => {
       <ReactMapGL
         {...viewport}
         mapboxApiAccessToken="pk.eyJ1IjoicmFjaGVsZGx0IiwiYSI6ImNrYzdsMG9qZTBxOGMyc2xqMzV2ejd1czEifQ.4f9dZK4w0vGTCrStvdKzlQ"
-        mapStyle="mapbox://styles/racheldlt/ckd8ugjbx131v1imp0vnj1vvz"
+        mapStyle="mapbox://styles/racheldlt/ckd6j2d6h00d01inofdls4fks"
         onViewportChange={(viewport) => {
           setViewport(viewport);
         }}
       >
         {address.map((location) => {
           console.log(location);
-          if(location)
-          return (
-            <Marker
-              key={location._id}
-              longitude={location[0]}
-              latitude={location[1]}
-            >
-              <Pin size={5} />
-            </Marker>
-          );
+          if (location)
+            return (
+              <Marker
+                key={location._id}
+                longitude={location[0]}
+                latitude={location[1]}
+              >
+                <Pin size={5} />
+                <img src={tower} />
+              </Marker>
+            );
         })}
-
       </ReactMapGL>
-
     </div>
-    
   );
 };
 
