@@ -12,7 +12,9 @@ const Home = (props) => {
   <div className="homepage"> 
     <Card />
   <div className="abh-container">
+    <a href="/threads"> 
     <img className="abh" src={ABH}/>
+    </a>
     </div>
     <h1 className="homepage-header"></h1>
     <div className="map-container">

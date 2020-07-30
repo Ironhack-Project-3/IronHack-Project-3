@@ -2,6 +2,7 @@ import React, { useState, useEffect, Component } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import Pin from "./Pin";
 import axios from "axios";
+import mapboxgl from "mapbox-gl"
 
 const convertAddress = (address) => {
   let token =
@@ -22,8 +23,8 @@ const Map = () => {
  
     latitude: 52.5200,
     longitude: 13.4050,
-    width: "180vh",
-    height: "100vh",
+    width: "200vh",
+    height: "30vh",
     zoom: 10 
   });
 
@@ -61,6 +62,17 @@ const Map = () => {
       });
     }
   }, [address]);
+   
+
+  // var map = new mapboxgl.Map({
+  //   container: 'map', // container id
+  //   style: 'mapbox://styles/mapbox/streets-v11', //stylesheet location
+  //   center: [-122.65, 45.52], // starting position
+  //   zoom: 9 // starting zoom
+  //   });
+     
+  //   // disable map zoom when using scroll
+  //   Map.scrollZoom.disable();
 
   return (
     <div>
@@ -87,7 +99,9 @@ const Map = () => {
         })}
 
       </ReactMapGL>
+
     </div>
+    
   );
 };
 
