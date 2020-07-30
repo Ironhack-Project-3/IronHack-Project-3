@@ -80,8 +80,7 @@ class ThreadList extends Component {
                       <h3>{thread.title}</h3>
                     </Link>
 
-                  
-                    <Link to={`/profile/${thread.user._id}`}>
+                    <Link to={`/profile/${id}`}>
                       <h5>{name}</h5>
                     </Link>
 
