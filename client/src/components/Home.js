@@ -11,7 +11,6 @@ const Home = (props) => {
   return (
   <div className="homepage"> 
     <Card />
-    <h1 className="homepage-header">Temp header home</h1>
   <div className="abh-container">
     <img className="abh" src={ABH}/>
     </div>
