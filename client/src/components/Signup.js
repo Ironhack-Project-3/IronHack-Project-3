@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
 import { signup } from "../services/auth";
+import {tower} from "../utils/imageUpload"
 
 const arrayOfSkills = [
   { label: "I can translate in writing", name: "write" },
@@ -109,17 +110,18 @@ export default class Signup extends Component {
             </p>
           </div>
           <div className="signup-form">
-            <h2>Signup as Local</h2>
+            <h2>Sign up</h2>
 
-            <Form onSubmit={this.handleSubmit}>
+            <Form onSubmit={this.handleSubmit} className="signup-form-form">
               <Form.Group>
-                <Form.Label htmlFor="username">Username: </Form.Label>
+                <Form.Label htmlFor="username"></Form.Label>
                 <Form.Control
                   type="text"
                   name="username"
                   value={this.state.username}
                   onChange={this.handleChange}
                   id="username"
+                  placeholder="Username: "
                 />
               </Form.Group>
               <Form.Group>
@@ -130,6 +132,7 @@ export default class Signup extends Component {
                   value={this.state.password}
                   onChange={this.handleChange}
                   id="password"
+                  placeholder="Password: "
                 />
               </Form.Group>
 
@@ -141,6 +144,7 @@ export default class Signup extends Component {
                   value={this.state.email}
                   onChange={this.handleChange}
                   id="email"
+                  placeholder="Email: "
                 />
               </Form.Group>
 
@@ -152,6 +156,8 @@ export default class Signup extends Component {
                   value={this.state.name}
                   onChange={this.handleChange}
                   id="name"
+
+                  placeholder="Name: "
                 />
               </Form.Group>
 
@@ -163,6 +169,8 @@ export default class Signup extends Component {
                   value={this.state.picture}
                   onChange={this.handleChange}
                   id="picture"
+
+                  placeholder="Picture: "
                 />
               </Form.Group>
 
@@ -174,6 +182,8 @@ export default class Signup extends Component {
                   value={this.state.address}
                   onChange={this.handleChange}
                   id="address"
+
+                  placeholder="Address: "
                 />
               </Form.Group>
 
@@ -185,6 +195,8 @@ export default class Signup extends Component {
                   value={this.state.age}
                   onChange={this.handleChange}
                   id="age"
+
+                  placeholder="Age: "
                 />
               </Form.Group>
 
@@ -204,6 +216,8 @@ export default class Signup extends Component {
                         }
                         name={skill.name}
                         id={skill.name}
+
+                  placeholder="Skills: "
                       />
                     ))}
                     {/* <Form.Check
@@ -264,6 +278,8 @@ export default class Signup extends Component {
                   value={this.state.bio}
                   onChange={this.handleChange}
                   id="bio"
+
+                  placeholder="Bio: "
                 />
               </Form.Group>
 
@@ -277,6 +293,8 @@ export default class Signup extends Component {
               </div>
             </Form>
           </div>
+
+          <img src={tower} className="tower-icon"/>
         </div>
       </>
     );

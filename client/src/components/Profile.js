@@ -106,9 +106,7 @@ export default class Profile extends React.Component {
       });
     }
   }
-  render() {
-    console.log(this.props.user);
-    if (!this.state.user) return <div>Loading..</div>;
+  
 
 
 
@@ -175,6 +173,6 @@ export default class Profile extends React.Component {
           </div>
         </div>
       </>
-    );
+    )
   }
 }
