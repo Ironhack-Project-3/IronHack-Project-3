@@ -106,16 +106,9 @@ export default class Profile extends React.Component {
       });
     }
   }
-  render() {
-    console.log(this.props.user);
-    if (!this.state.user) return <div>Loading..</div>;
-
-
-
 
   render() {
     console.log(this.props.user, "profile user");
-
 
     return (
       <>
@@ -123,7 +116,7 @@ export default class Profile extends React.Component {
         <div className="profile-page">
           <div className="profile-info">
             <ul>
-/////////
+              /////////
               <h1>Welcome to your profile, {this.state.user.username}!</h1>
               <li>Username: {this.state.user.username}</li>
               <li>Email: {this.state.user.email}</li>
@@ -137,7 +130,7 @@ export default class Profile extends React.Component {
                 ))}
               </li>
               <li>Bio: {this.state.user.bio}</li>
-{/* /////////
+              {/* /////////
               <h1>Welcome to your profile, {this.props.user.username}!</h1>
             <li><strong>Username:</strong> {this.props.user.username}</li>
               <li><strong>Email: </strong>{this.props.user.email}</li>
@@ -155,7 +148,6 @@ export default class Profile extends React.Component {
               <li><strong>Bio: </strong>{this.props.user.bio}</li>
 
 ////////// */}
-
             </ul>
             <div className="user-details-edit-delete-buttons">
               <button onClick={this.toggleEditUser}>Edit User</button>
