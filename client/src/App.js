@@ -61,6 +61,13 @@ class App extends React.Component {
             render={(props)=><Profile  setUser={this.setUser}
             user={this.state.user} {...props} ></Profile>}
           />
+             <Route
+            exact
+            path="/profile/:id"
+            setUser={this.setUser}
+            user={this.state.user}
+            component={Profile}
+          />
 
           <Route exact path="/users/:id" component={UserDetails} />
           <Route
