@@ -38,6 +38,7 @@ router.get("/users/:userId/threads/:threadId", (req, res, next) => {
 // POST route => to create a new task
 router.post("/threads", (req, res, next) => {
   console.log("req.body", req.body);
+  console.log(req.user);
   Thread.create({
     title: req.body.title,
     description: req.body.description,
