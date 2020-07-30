@@ -21,7 +21,6 @@ export default class Profile extends React.Component {
       user: user,
     });
   };
-
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({
@@ -89,7 +88,6 @@ export default class Profile extends React.Component {
         }
       });
   };
-
   componentDidMount() {
     if (this.props.match.params.id) {
       this.getData();
@@ -106,24 +104,20 @@ export default class Profile extends React.Component {
       });
     }
   }
-  
-
-
-
 
   render() {
-    console.log(this.props.user, "profile user");
-
-
+    console.log(this.props.user);
+    if (!this.state.user) return <div>Loading..</div>;
     return (
       <>
         <Navbar user={this.state.user} setUser={this.setUser} />
         <div className="profile-page">
           <div className="profile-info">
             <ul>
-/////////
               <h1>Welcome to your profile, {this.state.user.username}!</h1>
+              <img src={this.state.user.picture} alt="Your face"></img>
               <li>Username: {this.state.user.username}</li>
+              <li>Picture: {this.state.user.picture}</li>
               <li>Email: {this.state.user.email}</li>
               <li>Name: {this.state.user.name}</li>
               <li>Age: {this.state.user.age}</li>
@@ -135,7 +129,7 @@ export default class Profile extends React.Component {
                 ))}
               </li>
               <li>Bio: {this.state.user.bio}</li>
-{/* /////////
+              {/* /////////
               <h1>Welcome to your profile, {this.props.user.username}!</h1>
             <li><strong>Username:</strong> {this.props.user.username}</li>
               <li><strong>Email: </strong>{this.props.user.email}</li>
@@ -153,7 +147,6 @@ export default class Profile extends React.Component {
               <li><strong>Bio: </strong>{this.props.user.bio}</li>
 
 ////////// */}
-
             </ul>
             <div className="user-details-edit-delete-buttons">
               <button onClick={this.toggleEditUser}>Edit User</button>

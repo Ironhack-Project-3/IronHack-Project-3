@@ -40,7 +40,6 @@ class ThreadList extends Component {
     // console.log("threadList props", this.props)
     return (
       <>
-
         {/* <Navbar /> */}
         <div className="threads">
           <div className="threadlist">
@@ -55,10 +54,10 @@ class ThreadList extends Component {
             <div className="threadlist-results">
               {this.state.listOfThreads.map((thread) => {
                 let name = "";
-
+                let id = "";
 
                 thread.user ? (name = thread.user.username) : (name = "");
-
+                thread.user ? (id = thread.user._id) : (id = "");
 
                 {
                   /* let tests = this.state.listOfUsers.find(
@@ -86,14 +85,7 @@ class ThreadList extends Component {
                       <h5>{name}</h5>
                     </Link>
 
-
-                  {/* <Link to={`/profile/${id}`}>
-                      <h5>{name}</h5>
-                    </Link> */}
-
-
                     <p>{thread.description} </p>
-
                     <div className="threadlist-buttons">
                       <Link to={`/threads/${thread._id}`}>
                         <p>Go to Post</p>
