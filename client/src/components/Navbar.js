@@ -29,8 +29,10 @@ export default class Card extends Component {
     // console.log(this.dropdownMenu);
     return (
       <div>
-        <button onClick={this.menuInteraction}>MENU ICON HERE</button>
-
+        <div className="menu-bar">
+          <p>GLB</p>
+        <button onClick={this.menuInteraction}>☰</button>
+        </div>
         <div className="menu">
           {this.state.showMenu ? (
             <nav className="nav-style">

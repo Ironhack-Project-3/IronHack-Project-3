@@ -21,10 +21,7 @@ export default class Welcome extends Component {
                   <Link to="/login">log in</Link>
                 </li>
                 <li>
-                  <Link to="/signup">sign up as newcomer</Link>
-                </li>
-                <li>
-                  <Link to="/signup">signup as local</Link>
+                  <Link to="/signup">sign up</Link>
                 </li>
               </ul> 
               </div>
