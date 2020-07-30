@@ -17,7 +17,7 @@ import AddThread from "./components/threads/AddThread";
 import ThreadList from "./components/threads/ThreadList";
 import ThreadDetails from "./components/threads/ThreadDetails";
 import ProtectedRoute from "./components/ProtectedRoute";
-import ThreadBoard from "./components/threads/ThreadBoard";
+import FourOhFour from "./components/FourOhFour";
 
 class App extends React.Component {
   state = {
@@ -76,6 +76,7 @@ class App extends React.Component {
             render={(props) => <ThreadList user={this.state.user} {...props} />}
           />
           <Route exact path="/threads/:id" component={ThreadDetails} />
+          <Route path="*" component={FourOhFour} />
           {/* <Route exaxt path="/posts" component={ThreadBoard} />        */}
         </Switch>
       </div>

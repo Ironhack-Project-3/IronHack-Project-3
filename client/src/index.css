@@ -690,3 +690,25 @@ font-family: 'Carter One', cursive;
   justify-content: center;
   padding-bottom: 5%;
 }
+
+
+/***************** 404 *****************/
+
+.four{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.four img{
+  margin-top: 15%;
+  width: 50vh;
+}
+
+.four a{
+  font-family: 'Knewave', cursive;
+  font-size: 7em;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
