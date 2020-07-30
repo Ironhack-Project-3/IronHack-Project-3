@@ -4,7 +4,6 @@ const router = express.Router();
 const Thread = require("../models/Thread");
 const User = require("../models/User");
 
-
 router.post("/", (req, res) => {
   const title = req.body.title;
   const description = req.body.description;
@@ -42,7 +41,7 @@ router.post("/threads", (req, res, next) => {
   Thread.create({
     title: req.body.title,
     description: req.body.description,
-    user: req.body.userID,
+    user: req.user._id,
   })
     .then((response) => {
       User.findByIdAndUpdate(req.body.userID, {
