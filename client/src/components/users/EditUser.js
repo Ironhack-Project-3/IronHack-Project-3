@@ -34,6 +34,7 @@ export default class extends Component {
 
     username: this.props.user.username,
         name: this.state.name,
+        picture: this.state.picture,
         email: this.state.email,
         age: this.state.age,
         address: this.state.address,
@@ -44,11 +45,12 @@ export default class extends Component {
         this.props.setUser({
           username: this.props.user.username,
           name: this.state.name,
+          picture: this.state.picture,
           email: this.state.email,
-        age: this.state.age,
-        address: this.state.address,
-        skills: this.state.skills,
-        bio:this.state.bio,
+          age: this.state.age,
+          address: this.state.address,
+          skills: this.state.skills,
+          bio:this.state.bio,
         });
         this.props.toggleEditUser();
         this.props.history.push(`/profile`);
@@ -70,6 +72,16 @@ export default class extends Component {
               type='text'
               name='name'
               value={this.state.name}
+              onChange={this.handleChange}
+            />
+          </Form.Group>
+
+          <Form.Group> 
+          <Form.Label>Picture:</Form.Label>
+            <Form.Control
+              type='text'
+              name='picture'
+              value={this.state.picture}
               onChange={this.handleChange}
             />
           </Form.Group>
