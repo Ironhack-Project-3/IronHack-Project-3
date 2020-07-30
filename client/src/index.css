@@ -9,6 +9,7 @@
 
 .nav-style {
   display: flex;
+
   /* justify-content: flex-end; */
   background-color: #00FF00;
   width: 20%;
@@ -17,6 +18,7 @@
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   /* padding-left: -60px; */
+
 }
 
 .nav-style ul {
@@ -119,13 +121,27 @@
   font-size: 2em;
 }
 
-.threadlist-individual-result a:hover{
+.threadlist-individual-result a h3:hover { 
+  color: black;
+  text-decoration: none;
+}
+ 
+
+.threadlist-individual-result a h5:hover{
   text-decoration: none;
   color:black;
 }
 
 .threadlist-individual-result:hover{
   background-color: #F7BD8D;
+}
+
+.threadlist-individual-result a h5 {
+  border-bottom: 2px solid currentColor;
+  display: inline-block;
+  line-height: 1.85;
+  color: #6a6a6a; 
+  font-size: 1rem;
 }
 
 .threadlist-buttons {
@@ -144,19 +160,26 @@
 .threadlist-buttons p:hover { 
   color: black
 }
-
-.threadlist-buttons a:hover{
  
-
-}
 /***************** ADD NEW THREAD *****************/
 
 .add-thread {
   margin: 1%;
   width: 50%;
 }
+
+.add-thread h2 {
+
+  font-family: 'Carter One', cursive;
+  margin-bottom: 3%;
+}
+
 .thread-form {
-  width: 100%;
+  width: 100%; 
+  border: 1px solid blacK;
+  border-radius: 25px;
+
+  padding: 3%;
 }
 
 .thread-form input[type="text"] {
@@ -188,7 +211,7 @@
 }
 
 .thread-form-button:hover {
-  background-color: violet;
+  background-color: #00FF00;
 }
 
 /***************** THREAD DETAILS *****************/
@@ -389,6 +412,11 @@
 .login-form {
   width: 30%;
   margin-top: 10%;
+}
+.login-form h2 { 
+
+  font-family: 'Carter One', cursive;
+  
 }
 
 .login-buttons {

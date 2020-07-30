@@ -21,6 +21,7 @@ export default class Profile extends React.Component {
       user: user,
     });
   };
+
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({
@@ -88,6 +89,7 @@ export default class Profile extends React.Component {
         }
       });
   };
+
   componentDidMount() {
     if (this.props.match.params.id) {
       this.getData();
@@ -107,6 +109,14 @@ export default class Profile extends React.Component {
   render() {
     console.log(this.props.user);
     if (!this.state.user) return <div>Loading..</div>;
+
+
+
+
+  render() {
+    console.log(this.props.user, "profile user");
+
+
     return (
       <>
         <Navbar user={this.state.user} setUser={this.setUser} />
@@ -135,7 +145,7 @@ export default class Profile extends React.Component {
               <li><strong>Age: </strong>{this.props.user.age}</li>
               <li><strong>Address: </strong>{this.props.user.address}</li>
               <li>
-              <strong> Skills:</strong>{" "}
+              <strong>Skills: </strong>{" "}
                 {this.props.user.skills.map(el => (
                   <>              
                   <li>{el}</li>                     
@@ -143,7 +153,9 @@ export default class Profile extends React.Component {
                 ))}
               </li>
               <li><strong>Bio: </strong>{this.props.user.bio}</li>
+
 ////////// */}
+
             </ul>
             <div className="user-details-edit-delete-buttons">
               <button onClick={this.toggleEditUser}>Edit User</button>

@@ -37,11 +37,9 @@ const Map = () => {
   const getAllAddress = () => {
     axios.get(`/api/users`).then((responseFromApi) => {
       let coordinates = responseFromApi.data.map((user) => {
-        console.log(user);
         return convertAddress(user.address);
       });
       Promise.all(coordinates).then((cords) => {
-        console.log(cords);
         setAddress(cords);
       });
     });
@@ -52,7 +50,6 @@ const Map = () => {
   }, []);
 
   useEffect(() => {
-
   }, [address]);
 
   useEffect(() => {
