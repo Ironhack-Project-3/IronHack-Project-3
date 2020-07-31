@@ -27,7 +27,6 @@ export default class extends Component {
           </Form.Group>
       <div className="edit-thread-buttons"> 
           <button type='submit'>Submit Changes</button>
-
           <button href={`/threads/${this.props._id}`} >Cancel</button>
           </div>
         </Form>

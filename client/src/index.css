@@ -11,11 +11,7 @@
   display: flex;
   /* justify-content: center; */
   background-color: #00FF00;
-<<<<<<< HEAD
   width: 10%;
-=======
-  width: 30%;
->>>>>>> 6030a2451ac796dc30f3e517259b7ac5a6d102d0
   position: absolute;
   /* min-width: 160px; */
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -36,7 +32,6 @@
   text-decoration: none;
   font-weight: bold;
   color: black;
-<<<<<<< HEAD
   font-size: 1.5em;
   font-weight: 800;
 }
@@ -47,12 +42,8 @@
   font-weight: bold;
   color: black;
   background-color: white;
-  font-size: 1.5em;
-  font-weight: 800;
-=======
   font-size: 1.3em;
   font-weight: 500;
->>>>>>> 6030a2451ac796dc30f3e517259b7ac5a6d102d0
 }
 
 .menu {
@@ -249,7 +240,7 @@
 }
 
 .thread-form-button:hover {
-  background-color: #00FF00;
+  background-color: #F7BD8D;
 }
 
 .people-icon{
@@ -380,6 +371,10 @@ margin-top: -4%;
 .edit-thread-buttons {
   display: flex;
   justify-content: center;
+}
+
+.edit-thread-buttons button:hover {
+background-color: #F7BD8D;
 }
 
 /***************** WELCOME PAGE *****************/
