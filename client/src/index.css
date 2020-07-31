@@ -9,13 +9,18 @@
 
 .nav-style {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   background-color: #00FF00;
+<<<<<<< HEAD
   width: 10%;
+=======
+  width: 30%;
+>>>>>>> 6030a2451ac796dc30f3e517259b7ac5a6d102d0
   position: absolute;
-  min-width: 160px;
+  /* min-width: 160px; */
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1; 
+  /* z-index: 1;  */
+  transition: 2s;
 }
 
 .nav-style ul {  
@@ -31,6 +36,7 @@
   text-decoration: none;
   font-weight: bold;
   color: black;
+<<<<<<< HEAD
   font-size: 1.5em;
   font-weight: 800;
 }
@@ -43,6 +49,10 @@
   background-color: white;
   font-size: 1.5em;
   font-weight: 800;
+=======
+  font-size: 1.3em;
+  font-weight: 500;
+>>>>>>> 6030a2451ac796dc30f3e517259b7ac5a6d102d0
 }
 
 .menu {
@@ -54,17 +64,18 @@
   background-color: #00FF00;
   display: flex;
   justify-content: space-between;
-  padding: 0% 2%;
+  padding: 0% 1.5%;
+  height: 65px;
 }
 
 .menu-bar p {
   font-family: 'Carter One', cursive;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 .menu-bar button {
   background-color: #00FF00;
   border: none;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 
@@ -93,7 +104,7 @@
   justify-content: center;
   align-items: center;
   font-size: 1.5em;
-  margin: 1%;
+  margin: -1%;
 }
 
 .abh-container{
@@ -162,7 +173,7 @@
 }
 
 .threadlist-individual-result a h5 {
-  border-bottom: 2px solid currentColor;
+  border-bottom: 2x solid currentColor;
   display: inline-block;
   line-height: 1.85;
   color: #6a6a6a; 
@@ -203,7 +214,7 @@
 
 .thread-form {
   width: 100%; 
-  border: 1px solid blacK;
+  border: 5px solid blacK;
   border-radius: 25px;
 
   padding: 3%;
@@ -267,7 +278,7 @@
   align-content: stretch;
   width: 55%;
   height: auto;
-  border: 1px solid black;
+  border: 5px solid black;
   border-radius: 25px;
   margin: 5% 0%; 
   padding: 3%;
@@ -316,15 +327,24 @@
   border: none;
 }
 
-.thread-details-edit-delete-buttons button:hover{ 
+.thread-details-edit-delete-buttons button:hover { 
   margin-right: 10px;
   padding: 10px 10px;
-  background-color: #00FF00;
+  background-color: #F7BD8D;
   border-radius: 10px;
   text-align: center;
   color: black;
   border: none;
+}
 
+.bridge-icon {
+  display:flex;
+  justify-content: center;
+}
+
+.bridge-icon img {
+width:70vh;
+margin-top: -4%;
 }
 
 .edit-thread {
@@ -371,9 +391,9 @@
   margin-top: 10%;
 }
 
-.welcome-picture {
+/* .welcome-picture {
  
-}
+} */
 
 .welcome-picture img { 
   width: 150vh;
@@ -386,7 +406,7 @@
 .welcome-text {  
   display: block;
   align-self: center;
-  width: 70%;
+  width: 75%;
   margin-top: -11%;
   margin-left: -4%;
 }
@@ -398,23 +418,25 @@
 }
 
 .welcome-signup {
- margin-top: -2%;
+ /* margin-top: -2%; */
 }
 
 .welcome-signup ul {
   display: flex;
   color: black;
   list-style: none;
-  margin-left: -10%;
+  /* margin-left: -10%; */
 }
 
 .welcome-signup ul li {
   font-size: 1.2em;
   display: flex;
-  justify-content: space-evenly;
-  width: 30%;
-  padding: 2%;
-  margin-left:-7%;
+  margin-left: -6%;
+
+  /* justify-content: space-evenly; */
+  /* width: 30%; */
+  /* padding: 2%; */
+  /* margin-left:-7%; */
 }
 
 .welcome-signup ul li a {
@@ -448,11 +470,11 @@
 .signup-text p {
   margin-top: 30%;
   margin-right: 10%;
-  text-align: right;
+  /* text-align: right; */
 }
 
 .signup-form {
-  margin: -5% 0% 3% 0%;
+  margin: 0% 0% 5% 0%;
   width: 30%;
 }
 
@@ -463,10 +485,9 @@
 
 .signup-form-form{
   border: 1px solid black;
-  padding: 5%;
+  padding: 4%;
   border-radius: 25px;
 }
-
 
 .signup-form-form input[type="text"] { 
   border:none;
@@ -534,7 +555,7 @@
 .tower-icon{
 width: 35vh;
 margin-left:5%;
-
+padding-bottom: 15%;
 }
 
 /***************** LOG IN  PAGE *****************/
@@ -551,8 +572,8 @@ margin-left:5%;
 }
 .login-form h2 { 
   font-family: 'Carter One', cursive;
-  font-size: 11rem;
-  margin-bottom: 3%;
+  font-size: 8.5rem;
+  margin-bottom: 4%;
 }
 
 .login-form-form{
@@ -635,7 +656,7 @@ margin-left:5%;
 
 .bear-icon {
   width: 45vh; 
-  margin-top: 5%;
+  margin-top: 9%;
 }
 
 
@@ -644,7 +665,7 @@ margin-left:5%;
 .profile-page {
   display: flex;
   justify-content: center;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 .profile-page ul {
   margin-top: 5%;
@@ -655,13 +676,24 @@ margin-left:5%;
 }
 
 .profile-info { 
-  border: 1px solid black;
+  border: 5px solid black;
   border-radius: 25px;
   width: 50%;
   display: block;
-  justify-content: center;
+  justify-content: absolute;
   text-align: center;
+  padding-right:2%;
 }
+
+.profile-info img {
+  margin-top: 3%;
+  margin-bottom: 3%;
+  width: 50vh;
+  height: 50vh;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
 .profile-info h1 {
 font-family: 'Carter One', cursive;
 }
@@ -673,9 +705,18 @@ font-family: 'Carter One', cursive;
 }
 
 .user-details-edit-delete-buttons button {
-  margin-right: 10px;
   padding: 10px;
   background-color: white;
+  border-radius: 10px;
+  text-align: center;
+  border: none;
+  margin-left: 5%;
+  margin-top: 2%;
+}
+.user-details-edit-delete-buttons button:hover {
+  margin-right: 10px;
+  padding: 10px;
+  background-color: #F7BD8D;
   border-radius: 10px;
   text-align: center;
   border: none;
@@ -698,6 +739,15 @@ font-family: 'Carter One', cursive;
   border: none;
 }
 
+.edit-user-buttons button:hover {
+  margin-right: 10px;
+  padding: 10px;
+  background-color: #F7BD8D;
+  border-radius: 10px;
+  text-align: center;
+  border: none;
+}
+
 .edit-user-form {
   width: 100%;
 }
@@ -706,4 +756,33 @@ font-family: 'Carter One', cursive;
   display: flex; 
   justify-content: center;
   padding-bottom: 5%;
+}
+
+.ampelman-icon img{
+  width: 50vh; 
+  margin-top: 25%;
+  margin-left: 3%;
+  z-index: -1;
+  position: absolute;
+}
+ 
+/***************** 404 *****************/
+
+.four{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.four img{
+  margin-top: 15%;
+  width: 50vh;
+}
+
+.four a{
+  font-family: 'Knewave', cursive;
+  font-size: 7em;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }

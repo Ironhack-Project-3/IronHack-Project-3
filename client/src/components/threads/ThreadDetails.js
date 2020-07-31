@@ -6,6 +6,7 @@ import ThreadList from './ThreadList'
 import { Button } from 'react-bootstrap'
 import EditThread from './EditThread'
 import Navbar from '../Navbar'
+import {bridge} from '../../utils/imageUpload'
 
 class ThreadDetails extends Component {
 
@@ -114,7 +115,7 @@ class ThreadDetails extends Component {
           
           <div className="thread-details-buttons">
             
-            <Link to={`/threads/${this.state.thread._id}`}><p>Contact me</p></Link>
+            {/* <Link to={`/threads/${this.state.thread._id}`}><p>Contact me</p></Link> */}
 
             </div>
 
@@ -128,6 +129,10 @@ class ThreadDetails extends Component {
                   handleSubmit={this.handleSubmit} />
                 )}
         </div>
+
+      </div>
+        <div className="bridge-icon">
+      <img src={bridge} />
       </div>
       </>
       )
