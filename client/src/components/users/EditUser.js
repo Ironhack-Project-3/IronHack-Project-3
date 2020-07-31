@@ -67,72 +67,79 @@ export default class extends Component {
       <div className="edit-user">
         <Form onSubmit={this.handleSubmit}>
           <Form.Group> 
-          <Form.Label>Name:</Form.Label>
+          <Form.Label></Form.Label>
             <Form.Control
               type='text'
               name='name'
               value={this.state.name}
               onChange={this.handleChange}
+              placeholder="Name :"
             />
           </Form.Group>
 
           <Form.Group> 
-          <Form.Label>Picture:</Form.Label>
+          <Form.Label></Form.Label>
             <Form.Control
               type='text'
               name='picture'
               value={this.state.picture}
               onChange={this.handleChange}
+              placeholder="Picture :"
             />
           </Form.Group>
 
           <Form.Group> 
-          <Form.Label>Email:</Form.Label>
+          <Form.Label></Form.Label>
             <Form.Control
               type='text'  
               name='email'
               value={this.state.email}
               onChange={this.handleChange}
+              placeholder="Email :"
             />
           </Form.Group>
 
           <Form.Group> 
-          <Form.Label>Age:</Form.Label>
+          <Form.Label></Form.Label>
             <Form.Control
               type='textarea'  
               name='age'
               value={this.state.age}
               onChange={this.handleChange}
+              placeholder="Age :"
             />
           </Form.Group>
 
           <Form.Group> 
-          <Form.Label>Address:</Form.Label>
+          <Form.Label></Form.Label>
             <Form.Control
               type='text'  
               name='address'
               value={this.state.address}
               onChange={this.handleChange}
+              placeholder="Address :"
             />
           </Form.Group>
 
           <Form.Group> 
-          <Form.Label>Skills:</Form.Label>
+          <Form.Label></Form.Label>
             <Form.Control
               type='text'  
               name='skills'
               value={this.state.skills}
               onChange={this.handleChange}
+              placeholder="Skills :"
             />
           </Form.Group>
 
           <Form.Group> 
-          <Form.Label>Bio:</Form.Label>
+          <Form.Label></Form.Label>
             <Form.Control
               type='textarea'  
               name='bio'
               value={this.state.bio}
               onChange={this.handleChange}
+              placeholder="Bio :"
             />
           </Form.Group>
           

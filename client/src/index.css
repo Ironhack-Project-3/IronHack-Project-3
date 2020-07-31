@@ -154,7 +154,7 @@
 }
 
 .threadlist-individual-result a h5 {
-  border-bottom: 2px solid currentColor;
+  border-bottom: 2x solid currentColor;
   display: inline-block;
   line-height: 1.85;
   color: #6a6a6a; 
@@ -195,7 +195,7 @@
 
 .thread-form {
   width: 100%; 
-  border: 1px solid blacK;
+  border: 5px solid blacK;
   border-radius: 25px;
 
   padding: 3%;
@@ -259,7 +259,7 @@
   align-content: stretch;
   width: 55%;
   height: auto;
-  border: 1px solid black;
+  border: 5px solid black;
   border-radius: 25px;
   margin: 5% 0%; 
   padding: 3%;
@@ -309,15 +309,24 @@
   border: none;
 }
 
-.thread-details-edit-delete-buttons button:hover{ 
+.thread-details-edit-delete-buttons button:hover { 
   margin-right: 10px;
   padding: 10px 10px;
-  background-color: #00FF00;
+  background-color: #F7BD8D;
   border-radius: 10px;
   text-align: center;
   color: black;
   border: none;
+}
 
+.bridge-icon {
+  display:flex;
+  justify-content: center;
+}
+
+.bridge-icon img {
+width:70vh;
+margin-top: -4%;
 }
 
 .edit-thread {
@@ -468,8 +477,6 @@
   padding: 4%;
   border-radius: 25px;
 }
-
-
 
 .signup-form-form input[type="text"] { 
   border:none;
@@ -658,12 +665,13 @@ padding-bottom: 15%;
 }
 
 .profile-info { 
-  border: 1px solid black;
+  border: 5px solid black;
   border-radius: 25px;
   width: 50%;
   display: block;
   justify-content: absolute;
   text-align: center;
+  padding-right:2%;
 }
 
 .profile-info img {
@@ -686,9 +694,18 @@ font-family: 'Carter One', cursive;
 }
 
 .user-details-edit-delete-buttons button {
-  margin-right: 10px;
   padding: 10px;
   background-color: white;
+  border-radius: 10px;
+  text-align: center;
+  border: none;
+  margin-left: 5%;
+  margin-top: 2%;
+}
+.user-details-edit-delete-buttons button:hover {
+  margin-right: 10px;
+  padding: 10px;
+  background-color: #F7BD8D;
   border-radius: 10px;
   text-align: center;
   border: none;
@@ -698,6 +715,15 @@ font-family: 'Carter One', cursive;
   margin-right: 10px;
   padding: 10px;
   background-color: white;
+  border-radius: 10px;
+  text-align: center;
+  border: none;
+}
+
+.edit-user-buttons button:hover {
+  margin-right: 10px;
+  padding: 10px;
+  background-color: #F7BD8D;
   border-radius: 10px;
   text-align: center;
   border: none;
@@ -713,7 +739,14 @@ font-family: 'Carter One', cursive;
   padding-bottom: 5%;
 }
 
-
+.ampelman-icon img{
+  width: 50vh; 
+  margin-top: 25%;
+  margin-left: 3%;
+  z-index: -1;
+  position: absolute;
+}
+ 
 /***************** 404 *****************/
 
 .four{
