@@ -77,7 +77,6 @@ export default class Login extends Component {
           </div>
         </Form>
         </div>
-
       <img src={bear} className="bear-icon"/>
         </div>
       </>

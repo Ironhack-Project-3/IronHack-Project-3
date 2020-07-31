@@ -114,7 +114,7 @@ class ThreadDetails extends Component {
           
           <div className="thread-details-buttons">
             
-            <Link to={`/threads/${this.state.thread._id}`}><p>Contact me</p></Link>
+            {/* <Link to={`/threads/${this.state.thread._id}`}><p>Contact me</p></Link> */}
 
             </div>
 

@@ -129,14 +129,10 @@ export default class Profile extends React.Component {
                 ))}
               </li>
               <li>Bio: {this.state.user.bio}</li>
-           
             </ul>
-<div>
-
-  
-  <button></button>
-</div>
-
+            {/* <div>
+              <button></button>
+            </div> */}
             <div className="user-details-edit-delete-buttons">
               <button onClick={this.toggleEditUser}>Edit User</button>
             </div>

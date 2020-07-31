@@ -9,13 +9,14 @@
 
 .nav-style {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   background-color: #00FF00;
-  width: 15%;
+  width: 30%;
   position: absolute;
-  min-width: 160px;
+  /* min-width: 160px; */
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1; 
+  /* z-index: 1;  */
+  transition: 2s;
 }
 
 .nav-style ul {  
@@ -31,8 +32,8 @@
   text-decoration: none;
   font-weight: bold;
   color: black;
-  font-size: 2em;
-  font-weight: 800;
+  font-size: 1.3em;
+  font-weight: 500;
 }
 
 .menu {
@@ -44,17 +45,18 @@
   background-color: #00FF00;
   display: flex;
   justify-content: space-between;
-  padding: 0% 2%;
+  padding: 0% 1.5%;
+  height: 65px;
 }
 
 .menu-bar p {
   font-family: 'Carter One', cursive;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 .menu-bar button {
   background-color: #00FF00;
   border: none;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 
@@ -83,7 +85,7 @@
   justify-content: center;
   align-items: center;
   font-size: 1.5em;
-  margin: 1%;
+  margin: -1%;
 }
 
 .abh-container{
@@ -362,9 +364,9 @@
   margin-top: 10%;
 }
 
-.welcome-picture {
+/* .welcome-picture {
  
-}
+} */
 
 .welcome-picture img { 
   width: 150vh;
@@ -377,7 +379,7 @@
 .welcome-text {  
   display: block;
   align-self: center;
-  width: 70%;
+  width: 75%;
   margin-top: -11%;
   margin-left: -4%;
 }
@@ -389,23 +391,25 @@
 }
 
 .welcome-signup {
- margin-top: -2%;
+ /* margin-top: -2%; */
 }
 
 .welcome-signup ul {
   display: flex;
   color: black;
   list-style: none;
-  margin-left: -10%;
+  /* margin-left: -10%; */
 }
 
 .welcome-signup ul li {
   font-size: 1.2em;
   display: flex;
-  justify-content: space-evenly;
-  width: 30%;
-  padding: 2%;
-  margin-left:-7%;
+  margin-left: -6%;
+
+  /* justify-content: space-evenly; */
+  /* width: 30%; */
+  /* padding: 2%; */
+  /* margin-left:-7%; */
 }
 
 .welcome-signup ul li a {
@@ -439,24 +443,32 @@
 .signup-text p {
   margin-top: 30%;
   margin-right: 10%;
-  text-align: right;
+  /* text-align: right; */
 }
 
 .signup-form {
-  margin: -5% 0% 3% 0%;
+  margin: 0% 0% 5% 0%;
   width: 30%;
 }
 
-.signup-form h2 {
-  font-size: 10em;
+.Form.Group {
+  margin-bottom: -20px;
+}
+
+.sign h2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  font-size: 9em;
   font-family: 'Carter One', cursive;
 }
 
 .signup-form-form{
   border: 1px solid black;
-  padding: 5%;
+  padding: 4%;
   border-radius: 25px;
 }
+
 
 
 .signup-form-form input[type="text"] { 
@@ -525,7 +537,7 @@
 .tower-icon{
 width: 35vh;
 margin-left:5%;
-
+padding-bottom: 15%;
 }
 
 /***************** LOG IN  PAGE *****************/
@@ -542,8 +554,8 @@ margin-left:5%;
 }
 .login-form h2 { 
   font-family: 'Carter One', cursive;
-  font-size: 11rem;
-  margin-bottom: 3%;
+  font-size: 8.5rem;
+  margin-bottom: 4%;
 }
 
 .login-form-form{
@@ -626,7 +638,7 @@ margin-left:5%;
 
 .bear-icon {
   width: 45vh; 
-  margin-top: 5%;
+  margin-top: 9%;
 }
 
 
@@ -635,7 +647,7 @@ margin-left:5%;
 .profile-page {
   display: flex;
   justify-content: center;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 .profile-page ul {
   margin-top: 5%;
@@ -650,9 +662,19 @@ margin-left:5%;
   border-radius: 25px;
   width: 50%;
   display: block;
-  justify-content: center;
+  justify-content: absolute;
   text-align: center;
 }
+
+.profile-info img {
+  margin-top: 3%;
+  margin-bottom: 3%;
+  width: 50vh;
+  height: 50vh;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
 .profile-info h1 {
 font-family: 'Carter One', cursive;
 }

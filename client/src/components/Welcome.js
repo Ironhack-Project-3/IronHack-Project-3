@@ -6,6 +6,9 @@ export default class Welcome extends Component {
   render() {
     return (
       <>
+        {/* <div className="menu-bar">
+          <p>GLB</p>
+        </div> */}
         <div className="welcome-page">
           <div className="welcome-picture">
             <img src={ampelman} alt="pic" />
@@ -20,7 +23,7 @@ export default class Welcome extends Component {
                 <li>
                   <Link to="/login">log in</Link>
                 </li>
-                <li>
+                <li style={{marginLeft: "4%"}}>
                   <Link to="/signup">sign up</Link>
                 </li>
               </ul> 

@@ -101,12 +101,10 @@ export default class Signup extends Component {
 
   render() {
     return (
-      <>
+      <div className="sign">
+      <h2>Sign up</h2>
         <div className="signup-page">
-          
           <div className="signup-form">
-            <h2>Sign up</h2>
-
             <Form onSubmit={this.handleSubmit} className="signup-form-form">
               <Form.Group>
                 <Form.Label htmlFor="username"></Form.Label>
@@ -243,10 +241,9 @@ export default class Signup extends Component {
               </div>
             </Form>
           </div>
-
           <img src={tower} className="tower-icon"/>
         </div>
-      </>
+      </div>
     );
   }
 }
