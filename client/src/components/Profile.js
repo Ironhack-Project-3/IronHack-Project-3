@@ -3,6 +3,7 @@ import axios from "axios";
 //import User from '../../../models/User';
 import Navbar from "./Navbar";
 import EditUser from "./users/EditUser";
+import {logo} from "../utils/imageUpload"
 export default class Profile extends React.Component {
   state = {
     user: this.props.user,
@@ -111,7 +112,13 @@ export default class Profile extends React.Component {
     return (
       <>
         <Navbar user={this.state.user} setUser={this.setUser} />
+        <div class="ampelman-icon">
+                <img src={logo}/>
+          </div> 
+      
         <div className="profile-page">
+  
+      
           <div className="profile-info">
             <ul>
               <h1>{this.state.user.username}'s profile</h1>

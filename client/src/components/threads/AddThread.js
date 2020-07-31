@@ -35,7 +35,7 @@ class AddThread extends Component {
         <form className="thread-form" onSubmit={this.handleFormSubmit}>
           <label></label>
           <input type="text" name="title" placeholder="Enter title" value={this.state.title} onChange={ e => this.handleChange(e)}/>
-        <br/>
+          <br/>
           <label></label>
           <textarea name="description" placeholder="Enter description" value={this.state.description} onChange={ e => this.handleChange(e)} />
           <br/>
