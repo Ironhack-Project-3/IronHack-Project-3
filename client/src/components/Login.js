@@ -41,6 +41,10 @@ export default class Login extends Component {
   render() {
     return (
       <>  
+
+<div className="menu-bar">
+          <p>GLB</p> 
+        </div>
       <div className="login-page">
 
         <div className="login-form">

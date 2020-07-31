@@ -94,7 +94,7 @@ export default class Signup extends Component {
         });
       } else {
         this.props.setUser(data);
-        this.props.history.push("/Home");
+        this.props.history.push("/home");
       }
     });
   };
@@ -119,6 +119,7 @@ export default class Signup extends Component {
                   placeholder="*Username: "
                 />
               </Form.Group>
+           
               <Form.Group>
                 <Form.Label htmlFor="password"> </Form.Label>
                 <Form.Control
@@ -151,7 +152,6 @@ export default class Signup extends Component {
                   value={this.state.name}
                   onChange={this.handleChange}
                   id="name"
-
                   placeholder="Name: "
                 />
               </Form.Group>
@@ -164,7 +164,6 @@ export default class Signup extends Component {
                   value={this.state.picture}
                   onChange={this.handleChange}
                   id="picture"
-
                   placeholder="Picture: "
                 />
               </Form.Group>
@@ -177,7 +176,6 @@ export default class Signup extends Component {
                   value={this.state.address}
                   onChange={this.handleChange}
                   id="address"
-
                   placeholder="*Address: "
                 />
               </Form.Group>

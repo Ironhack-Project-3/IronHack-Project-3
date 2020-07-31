@@ -15,7 +15,6 @@ export default class Card extends Component {
 
   showMenu = (event) => {
     event.preventDefault();
-
     this.setState({ showMenu: true }, () => {
       document.addEventListener("click", this.closeMenu);
     });
